@@ -1,4 +1,4 @@
-Usage
+Contents
 =====
 
 .. _installation:
