@@ -1,9 +1,9 @@
 site_name: LVASPTHW
 theme:
-    name: mkdocs ## readthedocs
-site_url: http://www.bigbrosci.com
+    name: readthedocs # mkdocs ## readthedocs
+site_url: http://www.bigbrosci.cn
 nav:
-    - Home: home.md
+  #    - Home: home.md
     - LVASPTHW:
       -  preface: LVASPTHW/preface.md
       -  ex00: LVASPTHW/ex00.md
