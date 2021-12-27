@@ -1,3 +1,10 @@
 site_name: LVASPTHW
-  theme:
+theme:
     name: readthedocs
+site_url: https://example.com/
+nav:
+    - Home: index.md
+    - About: about.md
+    - Jobs: Jobs.md
+    - LVASPTHW: LASPTHW.md  
+    - Appendix: appendix.md 
