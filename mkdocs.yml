@@ -134,7 +134,7 @@ nav:
       -  M01: Miscellaneous/M01.md
       -  M02: Miscellaneous/M02.md
       -  M03: Miscellaneous/M03.md
-    - Jobs: 'Jobs/'
+    - Jobs: 
       -  J01: Jobs/j01.md
       -  J02: Jobs/j02.md 
     - About: about.md
