@@ -1,6 +1,1 @@
-site_name: LVASPTHW
-site_url: https://www.bigbrosci.com
-nav:
-    - Home: index.md
-    - About: about.md
-theme: readthedocs
+site_name: My Docs
