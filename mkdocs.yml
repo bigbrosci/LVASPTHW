@@ -1,10 +1,140 @@
 site_name: LVASPTHW
 theme:
-    name: readthedocs
-site_url: https://example.com/
+    name: mkdocs ## readthedocs
+site_url: http://www.bigbrosci.com
 nav:
-    - Home: index.md
+    - Home: home.md
+    - LVASPTHW:
+      -  preface: LVASPTHW/preface.md
+      -  ex00: LVASPTHW/ex00.md
+      -  ex01: LVASPTHW/ex01.md
+      -  ex02: LVASPTHW/ex02.md
+      -  ex03: LVASPTHW/ex03.md
+      -  ex04: LVASPTHW/ex04.md
+      -  ex05: LVASPTHW/ex05.md
+      -  ex06: LVASPTHW/ex06.md
+      -  ex07: LVASPTHW/ex07.md
+      -  ex08: LVASPTHW/ex08.md
+      -  ex09: LVASPTHW/ex09.md
+      -  ex10: LVASPTHW/ex10.md
+      -  ex11: LVASPTHW/ex11.md
+      -  ex12: LVASPTHW/ex12.md
+      -  ex13: LVASPTHW/ex13.md
+      -  ex14: LVASPTHW/ex14.md
+      -  ex15: LVASPTHW/ex15.md
+      -  ex16: LVASPTHW/ex16.md
+      -  ex17: LVASPTHW/ex17.md
+      -  ex18: LVASPTHW/ex18.md
+      -  ex19: LVASPTHW/ex19.md
+      -  ex20: LVASPTHW/ex20.md
+      -  ex21: LVASPTHW/ex21.md
+      -  ex22: LVASPTHW/ex22.md
+      -  ex23: LVASPTHW/ex23.md
+      -  ex24: LVASPTHW/ex24.md
+      -  ex25: LVASPTHW/ex25.md
+      -  ex26: LVASPTHW/ex26.md
+      -  ex27: LVASPTHW/ex27.md
+      -  ex28: LVASPTHW/ex28.md
+      -  ex29: LVASPTHW/ex29.md
+      -  ex30: LVASPTHW/ex30.md
+      -  ex31: LVASPTHW/ex31.md
+      -  ex32: LVASPTHW/ex32.md
+      -  ex33: LVASPTHW/ex33.md
+      -  ex34: LVASPTHW/ex34.md
+      -  ex35: LVASPTHW/ex35.md
+      -  ex36: LVASPTHW/ex36.md
+      -  ex37: LVASPTHW/ex37.md
+      -  ex38: LVASPTHW/ex38.md
+      -  ex39: LVASPTHW/ex39.md
+      -  ex40: LVASPTHW/ex40.md
+      -  ex41: LVASPTHW/ex41.md
+      -  ex42: LVASPTHW/ex42.md
+      -  ex43: LVASPTHW/ex43.md
+      -  ex44: LVASPTHW/ex44.md
+      -  ex45: LVASPTHW/ex45.md
+      -  ex46: LVASPTHW/ex46.md
+      -  ex47: LVASPTHW/ex47.md
+      -  ex48: LVASPTHW/ex48.md
+      -  ex49: LVASPTHW/ex49.md
+      -  ex50: LVASPTHW/ex50.md
+      -  ex51: LVASPTHW/ex51.md
+      -  ex52: LVASPTHW/ex52.md
+      -  ex53: LVASPTHW/ex53.md
+      -  ex54: LVASPTHW/ex54.md
+      -  ex55: LVASPTHW/ex55.md
+      -  ex56: LVASPTHW/ex56.md
+      -  ex57: LVASPTHW/ex57.md
+      -  ex58: LVASPTHW/ex58.md
+      -  ex59: LVASPTHW/ex59.md
+      -  ex60: LVASPTHW/ex60.md
+      -  ex61: LVASPTHW/ex61.md
+      -  ex62: LVASPTHW/ex62.md
+      -  ex63: LVASPTHW/ex63.md
+      -  ex64: LVASPTHW/ex64.md
+      -  ex65: LVASPTHW/ex65.md
+      -  ex66: LVASPTHW/ex66.md
+      -  ex67: LVASPTHW/ex67.md
+      -  ex68: LVASPTHW/ex68.md
+      -  ex69: LVASPTHW/ex69.md
+      -  ex70: LVASPTHW/ex70.md
+      -  ex71: LVASPTHW/ex71.md
+      -  ex72: LVASPTHW/ex72.md
+      -  ex73: LVASPTHW/ex73.md
+      -  ex74: LVASPTHW/ex74.md
+      -  ex75: LVASPTHW/ex75.md
+      -  ex76: LVASPTHW/ex76.md
+      -  ex77: LVASPTHW/ex77.md
+      -  ex78: LVASPTHW/ex78.md
+      -  ex79: LVASPTHW/ex79.md
+      -  ex80: LVASPTHW/ex80.md
+      -  ex81: LVASPTHW/ex81.md
+      -  ex82: LVASPTHW/ex82.md
+      -  ex83: LVASPTHW/ex83.md
+      -  ex84: LVASPTHW/ex84.md
+      -  ex85: LVASPTHW/ex85.md
+
+    - Appendix: 
+      -  A01: Appendix/A01.md
+      -  A02: Appendix/A02.md
+      -  A03: Appendix/A03.md
+      -  A04: Appendix/A04.md
+      -  A05: Appendix/A05.md
+      -  A06: Appendix/A06.md
+      -  A07: Appendix/A07.md
+      -  A08: Appendix/A08.md
+      -  A09: Appendix/A09.md
+      -  A10: Appendix/A10.md
+      -  A11: Appendix/A11.md
+      -  A12: Appendix/A12.md
+      -  A13: Appendix/A13.md
+      -  A14: Appendix/A14.md
+      -  A15: Appendix/A15.md
+      -  A16: Appendix/A16.md
+      -  A17: Appendix/A17.md
+      -  A18: Appendix/A18.md
+      -  A19: Appendix/A19.md
+      -  A20: Appendix/A20.md
+      -  A21: Appendix/A21.md
+      -  A22: Appendix/A22.md
+      -  A23: Appendix/A23.md
+      -  A24: Appendix/A24.md
+      -  A25: Appendix/A25.md
+      -  A26: Appendix/A26.md
+      -  A27: Appendix/A27.md
+
+    - Share: 
+      -  S01: Share/S01.md
+      -  S02: Share/S02.md
+      -  S03: Share/S03.md
+      -  S04: Share/S04.md
+      -  S05: Share/S05.md
+      -  S06: Share/S06.md
+
+    - Miscellaneous: 
+      -  M01: Miscellaneous/M01.md
+      -  M02: Miscellaneous/M02.md
+      -  M03: Miscellaneous/M03.md
+    - Jobs: 'Jobs/'
+      -  J01: Jobs/j01.md
+      -  J02: Jobs/j02.md 
     - About: about.md
-    - Jobs: Jobs.md
-    - LVASPTHW: LASPTHW.md  
-    - Appendix: appendix.md 
