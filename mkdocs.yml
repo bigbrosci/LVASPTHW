@@ -5,12 +5,12 @@ site_url: http://www.bigbrosci.cn
 nav:
     - About: about.md
     - LVASPTHW:
-      -  Ex00: LVASPTHW/Ex00.md
-      -  Ex01: LVASPTHW/Ex01.md
-      -  Ex02: LVASPTHW/Ex02.md
-      -  Ex03: LVASPTHW/Ex03.md
-      -  Ex04: LVASPTHW/Ex04.md
-      -  Ex05: LVASPTHW/Ex05.md
+      -  Ex00: LVASPTHW/Ex_00.md
+      -  Ex01: LVASPTHW/Ex_01.md
+      -  Ex02: LVASPTHW/Ex_02.md
+      -  Ex03: LVASPTHW/Ex_03.md
+      -  Ex04: LVASPTHW/Ex_04.md
+      -  Ex05: LVASPTHW/Ex_05.md
     - Appendix: 
       -  A01: Appendix/A01.md
     - Share: 
