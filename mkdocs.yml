@@ -8,6 +8,11 @@ nav:
       -  Ex01 为什么写本书: LVASPTHW/Ex_01.md
       -  Ex02 学习VASP的基本要求: LVASPTHW/Ex_02.md
       -  Ex03 服务器和程序语言: LVASPTHW/Ex_03.md
+      -  Ex04 VASP的输入和输出: LVASPTHW/Ex_04.md
+      -  Ex05 INCAR的准备: LVASPTHW/Ex_05.md
+      -  Ex06 KPOINTS的准备: LVASPTHW/Ex_06.md
+      -  Ex07 POSCAR的准备: LVASPTHW/Ex_07.md
+      -  Ex08 POTCAR的准备: LVASPTHW/Ex_08.md
     - Appendix: 
       -  A01: Appendix/A01.md
     - Share: 
