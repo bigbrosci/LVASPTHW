@@ -3,14 +3,11 @@ theme:
     name: readthedocs # mkdocs ## readthedocs
 site_url: http://www.bigbrosci.cn
 nav:
-    - About: about.md
     - LVASPTHW:
-      -  Ex00: LVASPTHW/Ex_00.md
-      -  Ex01: LVASPTHW/Ex_01.md
-      -  Ex02: LVASPTHW/Ex_02.md
-      -  Ex03: LVASPTHW/Ex_03.md
-      -  Ex04: LVASPTHW/Ex_04.md
-      -  Ex05: LVASPTHW/Ex_05.md
+      -  About "The Hard Way": LVASPTHW/Ex_00.md
+      -  Ex01 为什么写本书: LVASPTHW/Ex_01.md
+      -  Ex02 学习VASP的基本要求: LVASPTHW/Ex_02.md
+      -  Ex03 服务器和程序语言: LVASPTHW/Ex_03.md
     - Appendix: 
       -  A01: Appendix/A01.md
     - Share: 
