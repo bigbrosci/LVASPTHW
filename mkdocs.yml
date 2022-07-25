@@ -4,51 +4,17 @@ theme:
 site_url: http://www.bigbrosci.cn
 nav:
     - LVASPTHW:
-      -  序言: LVASPTHW/ex00.md
-      -  计算前的唠叨:  LVASPTHW/ex01.md
-
+      -  Ex00: LVASPTHW/Ex00.md
+      -  Ex01: LVASPTHW/Ex01.md
+      -  Ex02: LVASPTHW/Ex02.md
+      -  Ex03: LVASPTHW/Ex03.md
     - Appendix: 
       -  A01: Appendix/A01.md
-      -  A02: Appendix/A02.md
-      -  A03: Appendix/A03.md
-      -  A04: Appendix/A04.md
-      -  A05: Appendix/A05.md
-      -  A06: Appendix/A06.md
-      -  A07: Appendix/A07.md
-      -  A08: Appendix/A08.md
-      -  A09: Appendix/A09.md
-      -  A10: Appendix/A10.md
-      -  A11: Appendix/A11.md
-      -  A12: Appendix/A12.md
-      -  A13: Appendix/A13.md
-      -  A14: Appendix/A14.md
-      -  A15: Appendix/A15.md
-      -  A16: Appendix/A16.md
-      -  A17: Appendix/A17.md
-      -  A18: Appendix/A18.md
-      -  A19: Appendix/A19.md
-      -  A20: Appendix/A20.md
-      -  A21: Appendix/A21.md
-      -  A22: Appendix/A22.md
-      -  A23: Appendix/A23.md
-      -  A24: Appendix/A24.md
-      -  A25: Appendix/A25.md
-      -  A26: Appendix/A26.md
-      -  A27: Appendix/A27.md
-
     - Share: 
       -  S01: Share/S01.md
-      -  S02: Share/S02.md
-      -  S03: Share/S03.md
-      -  S04: Share/S04.md
-      -  S05: Share/S05.md
-      -  S06: Share/S06.md
-      -  S07: Share/S07.md
 
     - Miscellaneous: 
       -  M01: Miscellaneous/M01.md
-      -  M02: Miscellaneous/M02.md
-      -  M03: Miscellaneous/M03.md
     - Jobs: 
       -  J01: Jobs/j01.md
       -  J02: Jobs/j02.md 
