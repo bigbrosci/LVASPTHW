@@ -3,6 +3,7 @@ theme:
     name: readthedocs # mkdocs ## readthedocs
 site_url: http://www.bigbrosci.cn
 nav:
+    - About: about.md
     - LVASPTHW:
       -  Ex00: LVASPTHW/Ex00.md
       -  Ex01: LVASPTHW/Ex01.md
@@ -14,10 +15,8 @@ nav:
       -  A01: Appendix/A01.md
     - Share: 
       -  S01: Share/S01.md
-
     - Miscellaneous: 
       -  M01: Miscellaneous/M01.md
     - Jobs: 
       -  J01: Jobs/j01.md
       -  J02: Jobs/j02.md 
-    - About: about.md
