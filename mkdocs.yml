@@ -12,8 +12,9 @@ nav:
       -  A01: Appendix/A01.md
     - Share: 
       -  S01: Share/S01.md
+    - VASP 安装: 
+      -  M01: Miscellaneous/M01.md
+    - Trobule Shooting: 
+      -  J01: Jobs/j01.md
     - Miscellaneous: 
       -  M01: Miscellaneous/M01.md
-    - Jobs: 
-      -  J01: Jobs/j01.md
-      -  J02: Jobs/j02.md 
