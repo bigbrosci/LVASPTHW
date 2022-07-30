@@ -2,7 +2,7 @@ site_name: LVASPTHW(3rd)
 theme:
     name:  readthedocs
 site_url: http://www.bigbrosci.cn
-pages:
+nav:
     - About 
     - LVASPTHW:
       -  Exs
