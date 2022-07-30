@@ -13,13 +13,16 @@ nav:
       -  Ex06 KPOINTS的准备: LVASPTHW/Ex_06.md
       -  Ex07 POSCAR的准备: LVASPTHW/Ex_07.md
       -  Ex08 POTCAR的准备: LVASPTHW/Ex_08.md
-    - Appendix: 
-      -  A01: Appendix/A01.md
-    - Share: 
-      -  S01: Share/S01.md
+      -  Ex09 Linux的基本命令: LVASPTHW/Ex_09.md
+      -  Ex10 Linux的文件夹相关命令: LVASPTHW/Ex_10.md
+      -  Ex11 Linux的批量处理: LVASPTHW/Ex_11.md
     - VASP 安装: 
       -  M01: Miscellaneous/M01.md
     - Trobule Shooting: 
-      -  J01: Jobs/j01.md
+      -  TS01 自洽迭代与MiXING参数: TS/TS01.md
+    - Appendix: 
+      -  A01: Appendix/A01.md
     - Miscellaneous: 
       -  M01: Miscellaneous/M01.md
+    - Share: 
+      -  S01: Share/S01.md
