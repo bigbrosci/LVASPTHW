@@ -1,8 +1,8 @@
-site_name: LVASPTHW
+site_name: LVASPTHW(3rd)
 theme:
-    name: rtd-dropdown 
+    name: 'rtd-dropdown' 
 site_url: http://www.bigbrosci.cn
-nav:
+pages:
     - LVASPTHW:
       -  About "The Hard Way": LVASPTHW/Ex_00.md
       -  Ex01 为什么写本书: LVASPTHW/Ex_01.md
