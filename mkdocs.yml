@@ -3,22 +3,20 @@ theme:
     name:  readthedocs
 site_url: http://www.bigbrosci.cn
 nav:
-    - About: 
     - LVASPTHW:
-      - Exs:
-          - About "The Hard Way": LVASPTHW/Ex_00.md
-          - Ex01 为什么写本书: LVASPTHW/Ex_01.md
-          - Ex02 学习VASP的基本要求: LVASPTHW/Ex_02.md
-          - Ex03 服务器和程序语言: LVASPTHW/Ex_03.md
-          - Ex04 VASP的输入和输出: LVASPTHW/Ex_04.md
-          - Ex05 INCAR的准备: LVASPTHW/Ex_05.md
-          - Ex06 KPOINTS的准备: LVASPTHW/Ex_06.md
-          - Ex07 POSCAR的准备: LVASPTHW/Ex_07.md
-          - Ex08 POTCAR的准备: LVASPTHW/Ex_08.md
-          - Ex09 Linux的基本命令: LVASPTHW/Ex_09.md
-          - Ex10 Linux的文件夹相关命令: LVASPTHW/Ex_10.md
-          - Ex11 Linux的批量处理: LVASPTHW/Ex_11.md
-          - Ex12 for + sed: LVASPTHW/Ex_12.md
+      - About "The Hard Way": LVASPTHW/Ex_00.md
+      - Ex01 为什么写本书: LVASPTHW/Ex_01.md
+      - Ex02 学习VASP的基本要求: LVASPTHW/Ex_02.md
+      - Ex03 服务器和程序语言: LVASPTHW/Ex_03.md
+      - Ex04 VASP的输入和输出: LVASPTHW/Ex_04.md
+      - Ex05 INCAR的准备: LVASPTHW/Ex_05.md
+      - Ex06 KPOINTS的准备: LVASPTHW/Ex_06.md
+      - Ex07 POSCAR的准备: LVASPTHW/Ex_07.md
+      - Ex08 POTCAR的准备: LVASPTHW/Ex_08.md
+      - Ex09 Linux的基本命令: LVASPTHW/Ex_09.md
+      - Ex10 Linux的文件夹相关命令: LVASPTHW/Ex_10.md
+      - Ex11 Linux的批量处理: LVASPTHW/Ex_11.md
+      - Ex12 for + sed: LVASPTHW/Ex_12.md
     - VASP 安装: 
       - M01: Miscellaneous/M01.md
     - Trobule Shooting: 
