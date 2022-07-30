@@ -18,16 +18,20 @@ nav:
       - Ex11 Linux的批量处理: LVASPTHW/Ex_11.md
       - Ex12 for + sed: LVASPTHW/Ex_12.md
     - VASP 安装: 
-      - M01: Miscellaneous/M01.md
+      - IN01 VASP5.4 :  Install/M01.md
+      - IN02 VASP6.3 :  Install/M02.md
+      - IN02 VTST:      Install/M02.md
     - Trobule Shooting: 
       - TS01 自洽迭代与MiXING参数: TS/TS01.md
-    - ASE: 
-      - A01: Appendix/A01.md
-    - Pymatgen: 
-      - A01: Appendix/A01.md
-    - Miscellaneous: 
-      - M01: Miscellaneous/M01.md
-    - Share: 
-      - S01: Share/S01.md
+    - ASE and Pymatgen  
+      - ASE:      ASE/A01.md
+      - Pymatgen: PM/PM01.md
+    - Share:
+      - Python: Share/S01.md
+      - 数据库:   Share/S02.md
+      - 视频教程:  Share/S02.md
     - Q&A:
       - QA 常见问题及解答: QA/QA.md
+      - VASP遇到错误的解决流程: QA/QA10.md
+    - Miscellaneous: 
+      - M01: Miscellaneous/M01.md
