@@ -1,6 +1,6 @@
 site_name: LVASPTHW
 theme:
-    name: readthedocs # mkdocs ## readthedocs
+    name: 'rtd-dropdown' #readthedocs # mkdocs ## readthedocs
 site_url: http://www.bigbrosci.cn
 nav:
     - LVASPTHW:
