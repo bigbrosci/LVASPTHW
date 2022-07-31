@@ -1,23 +1,6 @@
----
-title: 通过关键词判断优化任务收敛
-categories: 
-- 个人经验
-tags: 
-- 收敛
-- 优化
-- OUTCAR
-date: 2017-11-27 15:30:16
----
+# Ex_17 通过关键词判断优化任务收敛或者结束
 
-
-
-今天QQ群里，有人（小风）问怎么通过reached这样的关键词来判断自己的任务是否收敛。
-
-首先：阿牛哥哥说说了，实现的方法有很多种？这大实话一点都不假！
-
-然后：乐平老师说，问问题的人没有问用什么语言写？这Python高手深藏不漏。
-
-紧接着：杠精大神用bash语言coding了一番，敲出若干行神秘的文字：
+怎么通过OUTCAR中的关键词来判断自己的任务是否收敛呢？
 
 ```
 check=$(grep "reach" vasp.log | tail -1)
@@ -110,7 +93,6 @@ qli@tekla2:~/ch4$ grep reached OUTCAR  |tail -n 1
   qli@tekla2:~/ch4$ if [ c=b ]; then echo bigbro ; fi
   bigbro
   ```
-
 
 
 

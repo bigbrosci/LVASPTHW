@@ -19,6 +19,12 @@ nav:
         - Ex10 Linux的文件夹相关命令: LVASPTHW/Ex_10.md
         - Ex11 Linux的批量处理: LVASPTHW/Ex_11.md
         - Ex12 for + sed: LVASPTHW/Ex_12.md
+        - Ex13 for + sed + KPOINTS: LVASPTHW/Ex_13.md
+        - Ex14 for + sed + POSCAR: LVASPTHW/Ex_14.md
+        - Ex15 连接服务器: LVASPTHW/Ex_15.md
+        - Ex16 提交任务: LVASPTHW/Ex_16.md
+        - Ex17 VASP的输出结果: LVASPTHW/Ex_17.md
+        - Ex_N 通过关键词判断任务结束: : LVASPTHW/Ex_N.md
       - VASP 安装: 
         - IN01 VASP5.4 :  Install/M01.md
         - IN02 VTST:      Install/M01.md
