@@ -24,7 +24,7 @@ nav:
         - Ex15 连接服务器: LVASPTHW/Ex_15.md
         - Ex16 提交任务: LVASPTHW/Ex_16.md
         - Ex17 VASP的输出结果: LVASPTHW/Ex_17.md
-        - Ex_N 通过关键词判断任务结束: : LVASPTHW/Ex_N.md
+        - Ex_N 通过关键词判断任务结束: LVASPTHW/Ex_N.md
       - VASP 安装: 
         - IN01 VASP5.4 :  Install/M01.md
         - IN02 VTST:      Install/M01.md
