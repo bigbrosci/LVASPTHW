@@ -29,7 +29,9 @@ nav:
         - IN01 VASP5.4 :  Install/M01.md
         - IN02 VTST:      Install/M01.md
       - Trobule Shooting: 
-        - TS01 自洽迭代与MiXING参数: TS/TS01.md
+        - TS01 自洽迭代与ISTART参数: TS/TS01.md
+        - TS02 自洽迭代与ALGO参数:   TS/TS01.md
+        - TS03 自洽迭代与MiXING参数: TS/TS01.md
     - ASE :
       - ASE:      ASE/A01.md
     - Pymatgen:
