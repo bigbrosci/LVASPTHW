@@ -19,17 +19,19 @@ nav:
       - Ex12 for + sed: LVASPTHW/Ex_12.md
     - VASP 安装: 
       - IN01 VASP5.4 :  Install/M01.md
-      - IN02 VASP6.3 :  Install/M02.md
-      - IN02 VTST:      Install/M02.md
+      - IN02 VASP6.3 :  Install/M01.md
+      - IN02 VTST:      Install/M01.md
     - Trobule Shooting: 
       - TS01 自洽迭代与MiXING参数: TS/TS01.md
-    - ASE and Pymatgen:
+    - ASE :
       - ASE:      ASE/A01.md
+    - Pymatgen:
       - Pymatgen: PM/PM01.md
     - Share:
-      - Python: Share/S01.md
-      - 数据库:   Share/S02.md
-      - 视频教程:  Share/S02.md
+      - Python      :   Share/S01.md
+      - 数据库       :    Share/S02.md
+      - 视频教程     :  Share/S02.md
+      - Github       : Share/S02.md
     - Q&A:
       - QA 常见问题及解答: QA/QA.md
       - VASP遇到错误的解决流程: QA/QA10.md
