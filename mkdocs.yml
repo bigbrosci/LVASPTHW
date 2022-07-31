@@ -3,6 +3,7 @@ theme:
     name:  readthedocs
 site_url: http://www.bigbrosci.cn
 nav:
+    - Home: index.md
     - LVASPTHW:
       - About "The Hard Way": LVASPTHW/Ex_00.md
       - Ex01 为什么写本书: LVASPTHW/Ex_01.md
@@ -37,3 +38,5 @@ nav:
       - VASP遇到错误的解决流程: QA/QA10.md
     - Miscellaneous: 
       - M01: Miscellaneous/M01.md
+    - About:
+      - About: about.md
