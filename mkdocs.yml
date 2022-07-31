@@ -23,7 +23,7 @@ nav:
       - IN02 VTST:      Install/M02.md
     - Trobule Shooting: 
       - TS01 自洽迭代与MiXING参数: TS/TS01.md
-    - ASE and Pymatgen  
+    - ASE and Pymatgen:
       - ASE:      ASE/A01.md
       - Pymatgen: PM/PM01.md
     - Share:
