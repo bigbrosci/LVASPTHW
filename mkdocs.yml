@@ -5,25 +5,25 @@ site_url: http://www.bigbrosci.cn
 nav:
     - Home: index.md
     - LVASPTHW:
-      - About "The Hard Way": LVASPTHW/Ex_00.md
-      - Ex01 为什么写本书: LVASPTHW/Ex_01.md
-      - Ex02 学习VASP的基本要求: LVASPTHW/Ex_02.md
-      - Ex03 服务器和程序语言: LVASPTHW/Ex_03.md
-      - Ex04 VASP的输入和输出: LVASPTHW/Ex_04.md
-      - Ex05 INCAR的准备: LVASPTHW/Ex_05.md
-      - Ex06 KPOINTS的准备: LVASPTHW/Ex_06.md
-      - Ex07 POSCAR的准备: LVASPTHW/Ex_07.md
-      - Ex08 POTCAR的准备: LVASPTHW/Ex_08.md
-      - Ex09 Linux的基本命令: LVASPTHW/Ex_09.md
-      - Ex10 Linux的文件夹相关命令: LVASPTHW/Ex_10.md
-      - Ex11 Linux的批量处理: LVASPTHW/Ex_11.md
-      - Ex12 for + sed: LVASPTHW/Ex_12.md
-    - VASP 安装: 
-      - IN01 VASP5.4 :  Install/M01.md
-      - IN02 VASP6.3 :  Install/M01.md
-      - IN02 VTST:      Install/M01.md
-    - Trobule Shooting: 
-      - TS01 自洽迭代与MiXING参数: TS/TS01.md
+      - 基本的一些操作:
+        - About "The Hard Way": LVASPTHW/Ex_00.md
+        - Ex01 为什么写本书: LVASPTHW/Ex_01.md
+        - Ex02 学习VASP的基本要求: LVASPTHW/Ex_02.md
+        - Ex03 服务器和程序语言: LVASPTHW/Ex_03.md
+        - Ex04 VASP的输入和输出: LVASPTHW/Ex_04.md
+        - Ex05 INCAR的准备: LVASPTHW/Ex_05.md
+        - Ex06 KPOINTS的准备: LVASPTHW/Ex_06.md
+        - Ex07 POSCAR的准备: LVASPTHW/Ex_07.md
+        - Ex08 POTCAR的准备: LVASPTHW/Ex_08.md
+        - Ex09 Linux的基本命令: LVASPTHW/Ex_09.md
+        - Ex10 Linux的文件夹相关命令: LVASPTHW/Ex_10.md
+        - Ex11 Linux的批量处理: LVASPTHW/Ex_11.md
+        - Ex12 for + sed: LVASPTHW/Ex_12.md
+      - VASP 安装: 
+        - IN01 VASP5.4 :  Install/M01.md
+        - IN02 VTST:      Install/M01.md
+      - Trobule Shooting: 
+        - TS01 自洽迭代与MiXING参数: TS/TS01.md
     - ASE :
       - ASE:      ASE/A01.md
     - Pymatgen:
@@ -36,7 +36,5 @@ nav:
     - Q&A:
       - QA 常见问题及解答: QA/QA.md
       - VASP遇到错误的解决流程: QA/QA10.md
-    - Miscellaneous: 
-      - M01: Miscellaneous/M01.md
     - About:
       - About: about.md
