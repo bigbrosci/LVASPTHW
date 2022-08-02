@@ -41,16 +41,22 @@ qli@bigbrosci H2O_gas % grep reach OUTCAR
 
 2）判断是否收敛，我们可以使用`grep reached OUTCAR`这个命令，我们会得到2个结果，一个是`aborting loop because EDIFF is reached`，暂且记为A1， 另一个是`reached required accuracy - stopping structural energy minimisation` ，暂且记为A2。如果一个优化任务收敛的话，我们是通过A2来判断的。
 
-### 写脚本的思路
 
-1. 现在我们就可以把A2名字改成A。A有什么特点呢？ 我们随便列几个：
+
+### 关键词判据
+
+现在我们就可以把A2名字改成A。A有什么特点呢？ 我们随便列几个：
 
 * 我们读OUTCAR，一旦发现A这一行，那么就知道任务收敛了。（但是`收敛≠结束`，有时候收敛这一步完成后，任务因为其他原因终止了，比如误删、写WAVECAR内存不够了，服务器停电了，都会导致不输出`tail OUTCAR`的那些信息。这种情况处理很简单，排除故障后，直接把CONTCAR复制成POSCAR，再次提交一次任务即可。 ）
-* A在OUTCAR中只出现一次，且出现在`grep reach OUTCAR` 命令输出的最后一行，如果用``'reached required accuracy' ``做为grep的对象，那么直有一行。
+* A在OUTCAR中只出现一次，且出现在`grep reach OUTCAR` 命令输出的最后一行，如果用``'reached required accuracy' ``做为grep的对象，那么只有一行。
 
 * A的第一个单词是reached，最后一个单词是minimisation；第2个单词是`required`；你也可以选其他的单词。
 
-2. **关键词判据**
+* 这些词就可以作为关键词来判断任务是否结束或者收敛。
+
+  
+
+### 写脚本的思路
 
 * 如果看到前面`tail OUTCAR`输出的内容，判断任务结束。
 
@@ -74,7 +80,7 @@ qli@bigbrosci H2O_gas % grep 'reached required accuracy' OUTCAR |awk '{print $2}
 required
 ```
 
-* 判断关键词通过`if`来实现，
+* 判断关键词这一过程通过`if`来实现，
 
 ```bash
 qli@bigbrosci H2O_gas % b='reached'
