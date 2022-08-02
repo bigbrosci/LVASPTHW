@@ -1,98 +1,122 @@
-# Ex_17 通过关键词判断优化任务收敛或者结束
+# Ex_N 通过关键词判断优化任务收敛或者结束
 
-怎么通过OUTCAR中的关键词来判断自己的任务是否收敛呢？
-
-```
-check=$(grep "reach" vasp.log | tail -1)
-if [ "$check" == "" ];then
-   echo "$n $i $j cp POSCAR CONTCAR" >> ../conver.log
-   cp POSCAR CONTCAR
-else
-   echo "$n $i $j $check" >> ../conver.log
-fi
-```
+怎么通过OUTCAR中的关键词来判断自己的任务是否收敛呢？今天我们就通过学习bash来简单介绍一下脚本工作的原理。
 
 
 
-下面我们就通过学习赋值和if语句来揭开上面的神秘文字。
+### 手动判断任务结束
 
-
-
-### 原理
-
-如果：f(A) = B，且f(C) = B，那么A的某一个性质 = C的某一个性质， 其中f() 是对操作对象在固定范围所实施的一个固定的方法。
-
-也就是说对A和C进行同样的操作，同时都得到了B，那么说明A的某一个性质 = C的某一个性质 。
-
-### 操作
-
-我们写脚本的目的是要通过B来判断A与C的关系。
-
-A是我们已知的结果；
-
-C是我们未知的结果；
-
-B也就是我们说的赋值的对象。
-
-首先，我们看一个已经收敛的例子：
+首先我们要知道一个任务结束后的输出结果长什么样子，用什么关键词去判断任务结束或者收敛。一般来说可以通过查看`OUTCAR`文件来判断。 下面是一个已经收敛的优化例子：
 
 ```bash
-qli@bigbro:~/ch4$ grep reached OUTCAR
------------------------- aborting loop because EDIFF is reached ----------------------------------------
------------------------- aborting loop because EDIFF is reached ----------------------------------------
------------------------- aborting loop because EDIFF is reached ----------------------------------------
- reached required accuracy - stopping structural energy minimisation
- 
-```
-
-我们知道，如果使用`grep reached OUTCAR`这个命令，我们会得到2个结果，一个是`aborting loop because EDIFF is reached`，暂且记为A1， 另一个是`reached required accuracy - stopping structural energy minimisation` ，暂且记为A2。如果一个优化任务收敛的话，我们是通过A2来判断的。那么现在我们就可以把A2名字改成A了。A有什么特点呢？ 我们随便列2个。
-
-1） A在OUTCAR中只出现一次，且出现在最后一行。
-
-2） A的第一个单词是reached。
-
-现在，我们将reached这个单词赋值为B。也就是让B为收敛冠名，只要满足通过上面2个条件筛选出来的结果是B，就说明计算收敛了。
-
-筛选这个操作怎么进行呢？ 
-
-* 利用特点1）： 使用`tail` 这个命令。
-
-```
-qli@tekla2:~/ch4$ grep reached OUTCAR
------------------------- aborting loop because EDIFF is reached ----------------------------------------
------------------------- aborting loop because EDIFF is reached ----------------------------------------
------------------------- aborting loop because EDIFF is reached ----------------------------------------
- reached required accuracy - stopping structural energy minimisation
-qli@tekla2:~/ch4$ grep reached OUTCAR  |tail -n 1
- reached required accuracy - stopping structural energy minimisation
-
-```
-
-* 利用特点2）：使用`cut`或者`awk`命令来获取第一个单词。
-
-  ```bash
-  qli@tekla2:~/ch4$ grep reached OUTCAR  |tail -n 1
-   reached required accuracy - stopping structural energy minimisation
-  qli@tekla2:~/ch4$ grep reached OUTCAR  |tail -n 1 | cut -c 2-8
-  reached
-  qli@tekla2:~/ch4$ grep reached OUTCAR  |tail -n 1 | awk '{print $1}'
-  reached
+qli@bigbrosci H2O_gas % ls
+CONTCAR          EIGENVAL         INCAR            OSZICAR          POSCAR           freq/            vasprun.xml
+DOSCAR           IBZKPT           KPOINTS          OUTCAR           XDATCAR          run_vasp_single*
+qli@bigbrosci H2O_gas % tail OUTCAR 
+                            User time (sec):       26.466
+                          System time (sec):        5.283
+                         Elapsed time (sec):       32.497
   
-  ```
+                   Maximum memory used (kb):      210180.
+                   Average memory used (kb):           0.
+  
+                          Minor page faults:      1151515
+                          Major page faults:            3
+                 Voluntary context switches:         2501
+qli@bigbrosci H2O_gas % grep reach OUTCAR 
+------------------------ aborting loop because EDIFF is reached ----------------------------------------
+------------------------ aborting loop because EDIFF is reached ----------------------------------------
+------------------------ aborting loop because EDIFF is reached ----------------------------------------
+------------------------ aborting loop because EDIFF is reached ----------------------------------------
+------------------------ aborting loop because EDIFF is reached ----------------------------------------
+------------------------ aborting loop because EDIFF is reached ----------------------------------------
+------------------------ aborting loop because EDIFF is reached ----------------------------------------
+------------------------ aborting loop because EDIFF is reached ----------------------------------------
+ reached required accuracy - stopping structural energy minimisation
+```
 
-* 判断C = B ? 
+1） `tail OUTCAR` 查看OUTCAR最后的几行，如果出现这样的结果，说明任务结束了。
 
-  ```bash
-  qli@tekla2:~/ch4$ b='reached'
-  qli@tekla2:~/ch4$ c=$(grep reached OUTCAR  |tail -n 1 | awk '{print $1}')
-  qli@tekla2:~/ch4$ echo $c
-  reached
-  qli@tekla2:~/ch4$ c=`grep reached OUTCAR  |tail -n 1 | awk '{print $1}'`
-  qli@tekla2:~/ch4$ echo $c
-  reached
-  qli@tekla2:~/ch4$ if [ c=b ]; then echo bigbro ; fi
-  bigbro
-  ```
+这里需要注意的是：`结束≠收敛`。
 
+2）判断是否收敛，我们可以使用`grep reached OUTCAR`这个命令，我们会得到2个结果，一个是`aborting loop because EDIFF is reached`，暂且记为A1， 另一个是`reached required accuracy - stopping structural energy minimisation` ，暂且记为A2。如果一个优化任务收敛的话，我们是通过A2来判断的。
 
+### 写脚本的思路
 
+1. 现在我们就可以把A2名字改成A。A有什么特点呢？ 我们随便列几个：
+
+* 我们读OUTCAR，一旦发现A这一行，那么就知道任务收敛了。（但是`收敛≠结束`，有时候收敛这一步完成后，任务因为其他原因终止了，比如误删、写WAVECAR内存不够了，服务器停电了，都会导致不输出`tail OUTCAR`的那些信息。这种情况处理很简单，排除故障后，直接把CONTCAR复制成POSCAR，再次提交一次任务即可。 ）
+* A在OUTCAR中只出现一次，且出现在`grep reach OUTCAR` 命令输出的最后一行，如果用``'reached required accuracy' ``做为grep的对象，那么直有一行。
+
+* A的第一个单词是reached，最后一个单词是minimisation；第2个单词是`required`；你也可以选其他的单词。
+
+2. **关键词判据**
+
+* 如果看到前面`tail OUTCAR`输出的内容，判断任务结束。
+
+* 如果发现A，判断任务收敛。
+* 前面两个都可以用一些关键词作为判据。如果发现某个唯一出现的关键词，说明任务结束后者收敛。比如下面我们运行一个命令，如果输出结果是`reached`，那么任务收敛了。使用一些常见的：`tail`,`cut`,`awk`命令来获取关键词作为判据。cut还得数空格数目，除非格式非常固定，这里建议用awk。
+
+```bash 
+qli@bigbrosci H2O_gas % grep reached OUTCAR  |tail -n 1
+ reached required accuracy - stopping structural energy minimisation
+qli@bigbrosci H2O_gas % grep reached OUTCAR | tail -n 1| awk '{print $1}'
+reached
+qli@bigbrosci H2O_gas % grep reached OUTCAR  |tail -n 1 | cut -c 2-8
+reached
+qli@bigbrosci H2O_gas % grep 'reached required accuracy' OUTCAR 
+ reached required accuracy - stopping structural energy minimisation
+qli@bigbrosci H2O_gas % grep 'reached required accuracy' OUTCAR |awk '{print $1}'
+reached
+qli@bigbrosci H2O_gas % grep 'reached required accuracy' OUTCAR |awk '{print $NF}'
+minimisation
+qli@bigbrosci H2O_gas % grep 'reached required accuracy' OUTCAR |awk '{print $2}' 
+required
+```
+
+* 判断关键词通过`if`来实现，
+
+```bash
+qli@bigbrosci H2O_gas % b='reached'
+qli@bigbrosci H2O_gas % c=$(grep reached OUTCAR  |tail -n 1 | awk '{print $1}')
+qli@bigbrosci H2O_gas % echo $c
+reached
+qli@bigbrosci H2O_gas % c=`grep reached OUTCAR  |tail -n 1 | awk '{print $1}'`
+qli@bigbrosci H2O_gas % echo $c
+reached
+qli@bigbrosci H2O_gas % if [ c=b ]; then echo bigbro ; fi
+bigbro
+```
+
+### 脚本及效果
+
+看完上面的部分，基本上有些眉目了，下面具体看下脚本以及工作的效果。
+
+```bash
+qli@bigbro H2O_gas % cat check_out.sh 
+#!/usr/bin/env bash 
+kwc='reached' # Key Word for Convergence
+kwf='Voluntary' # Key word for job finish
+soc=$(grep $kwc OUTCAR |tail -n 1 |awk '{print $1}')
+sof=$(grep $kwf OUTCAR |tail -n 1 |awk '{print $1}')
+
+if [ $soc=$kwc ]; then 
+echo 'converged'
+fi
+
+if [ $sof=$kwf ]; then 
+echo 'finished'
+fi
+
+if [ $soc=$kwc -a $sof=$kwf ]; then 
+echo 'Perfect'
+fi
+(base) qli@lqlhz H2O_gas % bash check_out.sh 
+converged
+finished
+Perfect
+```
+
+* 脚本里面用了2个关键词，一个判断任务结束，一个判断任务收敛；
+* 当2个关键词都能被找到的时候，说明任务顺利完成了。
+* `echo` 命令输出，可以根据自己喜好稍微改改，方便以后在别人面前装逼。
