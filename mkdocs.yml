@@ -26,8 +26,8 @@ nav:
         - Ex17 VASP的输出结果: LVASPTHW/Ex_17.md
         - Ex_N 通过关键词判断任务结束: LVASPTHW/Ex_N.md
       - VASP 安装: 
-        - IN01 VASP5.4 :  Install/M01.md
-        - IN02 VTST:      Install/M01.md
+        - IN01 VASP5.4 :  Install/IN01.md
+        - IN02 VTST编译:      Install/IN10.md
       - Trobule Shooting: 
         - TS01 自洽迭代与ISTART参数: TS/TS01.md
         - TS02 自洽迭代与ALGO参数:   TS/TS01.md
