@@ -32,10 +32,11 @@ nav:
         - TS01 自洽迭代与ISTART参数: TS/TS01.md
         - TS02 自洽迭代与ALGO参数:   TS/TS01.md
         - TS03 自洽迭代与MiXING参数: TS/TS01.md
-    - ASE :
-      - ASE:      ASE/A01.md
-    - Pymatgen:
-      - Pymatgen: PM/PM01.md
+    - ASE & Pymatgen:
+      - ASE:
+        - ASE01 骚操作: ASE/A01.md
+      - Pymatgen:
+        - PM01 通过ID保存cif: PM/PM01.md
     - Share:
       - Python      :   Share/S01.md
       - 数据库       :    Share/S02.md
@@ -44,5 +45,3 @@ nav:
     - Q&A:
       - QA 常见问题及解答: QA/QA.md
       - VASP遇到错误的解决流程: QA/QA10.md
-    - About:
-      - About: about.md
