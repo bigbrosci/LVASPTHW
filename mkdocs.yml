@@ -27,7 +27,8 @@ nav:
         - Ex_N 通过关键词判断任务结束: LVASPTHW/Ex_N.md
       - VASP 安装: 
         - IN01 VASP5.4 :  Install/IN01.md
-        - IN02 VTST编译:      Install/IN10.md
+        - IN03 通过Intel OneAPI 来编译VASP5.4.4 :  Install/IN03.md
+        - IN10 VTST编译:      Install/IN10.md
       - Trobule Shooting: 
         - TS01 自洽迭代与ISTART参数: TS/TS01.md
         - TS02 自洽迭代与ALGO参数:   TS/TS01.md
