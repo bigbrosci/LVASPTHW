@@ -39,10 +39,13 @@ nav:
       - Pymatgen:
         - PM01 通过ID保存cif: PM/PM01.md
     - Share:
-      - Python      :   Share/S01.md
-      - 数据库       :    Share/S02.md
-      - 视频教程     :  Share/S02.md
-      - Github       : Share/S04.md
+      - 长期硕博后位置:
+        - Nuria Lopez 课题组: Share/J01.md
+      - 资料分享:
+        - Python      :   Share/S01.md
+        - 数据库       :   Share/S02.md
+        - 视频教程     :  Share/S02.md
+        - Github       : Share/S04.md
     - Q&A:
       - QA 常见问题及解答: QA/QA.md
       - VASP遇到错误的解决流程: QA/QA10.md
