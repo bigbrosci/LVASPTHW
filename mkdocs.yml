@@ -30,9 +30,9 @@ nav:
         - IN03 通过Intel OneAPI 来编译VASP5.4.4 :  Install/IN03.md
         - IN10 VTST编译:      Install/IN10.md
       - Trobule Shooting: 
-        - TS01 自洽迭代与ISTART参数: TS/TS01.md
-        - TS02 自洽迭代与ALGO参数:   TS/TS02.md
-        - TS03 自洽迭代与MiXING参数: TS/TS03.md
+        - TS01 自洽迭代计算框架介绍: TS/TS01.md
+        - TS02 自洽迭代与ISTART参数: TS/TS02.md
+        - TS03 自洽迭代与MIXING参数: TS/TS03.md
     - ASE & Pymatgen:
       - ASE:
         - ASE01 骚操作: ASE/A01.md
