@@ -23,8 +23,9 @@ nav:
         - Ex14 for + sed + POSCAR: LVASPTHW/Ex_14.md
         - Ex15 连接服务器: LVASPTHW/Ex_15.md
         - Ex16 提交任务: LVASPTHW/Ex_16.md
-        - Ex17 VASP的输出结果: LVASPTHW/Ex_17.md
-        - Ex_N 通过关键词判断任务结束: LVASPTHW/Ex_N.md
+        - Ex17 VASP的输出结果1: LVASPTHW/Ex_17.md
+        - Ex18 VASP的输出结果2: LVASPTHW/Ex_18.md
+        - Ex20 通过关键词判断任务结束: LVASPTHW/Ex_20.md
       - VASP 安装: 
         - IN01 VASP5.4 :  Install/IN01.md
         - IN03 通过Intel OneAPI 来编译VASP5.4.4 :  Install/IN03.md
