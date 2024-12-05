@@ -62,9 +62,3 @@ nav:
         - Ex21.5 VASP遇到错误的解决流程: LVASPTHW/QA10.md
       - Chapter 22 寻找大师兄: 
         - Ex22 寻找大师兄: LVASPTHW/Misc.md 
-    - Share/分享:
-        - 博士博后位置 : LVASPTHW/J01.md
-        - Python       : LVASPTHW/S01.md
-        - 数据库       : LVASPTHW/S02.md
-        - 视频教程     : LVASPTHW/S02.md
-        - Github       : LVASPTHW/S04.md
