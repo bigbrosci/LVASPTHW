@@ -1,10 +1,10 @@
-site_name: LVASPTHW (3rd is COMING!)
+site_name: LVASPTHW (3rd is COMING)
 theme:
     name: readthedocs
 site_url: http://www.bigbrosci.cn
 nav:
     - 前言: Introduction.md
-    - 序言: Preface.md
+    - Preface: Preface.md
     - LVASPTHW:
       - Chapter 1 学习的基本要求:
         - Ex1.1 硬件:      LVASPTHW/Ex_02.md
