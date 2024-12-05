@@ -58,9 +58,6 @@ nav:
         - Ex20.3 VTST编译:      Install/IN10.md
         - Ex20.4 VASPsol:      Install/IN10.md
       - Chapter 21 Trobule Shooting: 
-        - Ex21.1 自洽迭代计算框架介绍: TS/TS01.md
-        - Ex21.2 自洽迭代与ISTART参数: TS/TS02.md
-        - Ex21.3 自洽迭代与MIXING参数: TS/TS03.md
         - Ex21.4 常见问题及解答: QA/QA.md
         - Ex21.5 VASP遇到错误的解决流程: QA/QA10.md
       - Chapter 22 寻找大师兄: 
