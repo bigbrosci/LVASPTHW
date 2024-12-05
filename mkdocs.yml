@@ -3,10 +3,10 @@ theme:
     name: readthedocs
 site_url: http://www.bigbrosci.cn
 nav:
-    - Introduction: LVASPTHW/Introduction.md
-    - Preface: LVASPTHW/index.md
+    - Introduction: Introduction.md
+    - Preface: index.md
     - LVASPTHW:
       - Chapter 1 学习的基本要求:
-        - Ex1.1 硬件:  LVASPTHW/Ex_02.md
-        - Ex1.2 软件:  LVASPTHW/Ex_02.md
-        - Ex1.3 基础知识:  LVASPTHW/Ex_02.md
+        - Ex1.1 硬件:      LVASPTHW/Ex_02.md
+        - Ex1.2 软件:      LVASPTHW/Ex_03.md
+        - Ex1.3 基础知识:  LVASPTHW/Ex_04.md
