@@ -4,7 +4,7 @@ theme:
 site_url: http://www.bigbrosci.cn
 nav:
     - 前言: Introduction.md
-    - Preface: index.md
+    - 序言: Preface.md
     - LVASPTHW:
       - Chapter 1 学习的基本要求:
         - Ex1.1 硬件:      LVASPTHW/Ex_02.md
