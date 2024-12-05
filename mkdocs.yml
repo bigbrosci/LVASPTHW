@@ -3,7 +3,7 @@ theme:
     name: readthedocs
 site_url: http://www.bigbrosci.cn
 nav:
-    - Introduction: Introduction.md
+    - 前言: Introduction.md
     - Preface: index.md
     - LVASPTHW:
       - Chapter 1 学习的基本要求:
