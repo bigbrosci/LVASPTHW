@@ -7,6 +7,7 @@ nav:
     - 序言: index.md
     - LVASPTHW:
       - Chapter 1 学习的基本要求:
-        - Ex1.1 硬件:      LVASPTHW/Ex_02.md
-        - Ex1.2 软件:      LVASPTHW/Ex_03.md
-        - Ex1.3 基础知识:  LVASPTHW/Ex_04.md
+        - Ex1.1 硬件和软件:  LVASPTHW/Ex1.1.md
+        - Ex1.2 基础知识:    LVASPTHW/Ex1.2.md
+        - Ex1.3 连接服务器:  LVASPTHW/Ex1.3.md
+        - Ex1.4 WSL与Ubuntu: LVASPTHW/Ex1.4.md
