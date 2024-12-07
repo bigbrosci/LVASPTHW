@@ -33,11 +33,12 @@ Windows官网也有安装WSL的详细介绍：https://learn.microsoft.com/en-us/
 
   - 右键点击 **Windows PowerShell**，选择 **以管理员身份运行**。
 
-* **运行命令启用 WSL**: 输入以下命令并按回车。按提示完成安装后，重启计算机以应用更改。
+* 2.2 **运行命令启用 WSL**: 
+  - 输入以下命令并按回车。按提示完成安装后，重启计算机以应用更改。
 
-   ```powershell
-    wsl --install
-    ```
+```bash
+wsl --install
+```
 
 此命令会自动：
 
