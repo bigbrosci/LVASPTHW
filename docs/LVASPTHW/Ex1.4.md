@@ -1,62 +1,164 @@
-# Ex03 服务器和程序语言
-
-VASP的计算就跟开车一样，设计到很多的内容，比如大街上的路怎么铺的？桥怎么建的？发动机怎么工作的？方向盘怎么工作的，刹车片什么材料做的？车身颜色怎么喷的？ 没有人会懂所有相关的知识。但是怎么打开车门，坐车里，启动发动机，踩油门，打方向盘，这是本教程所关心的，也就是类似驾校教练指导你学会如何开车，而不是关系如何去造车，去铺路。这里的车就是VASP。要开车，必须手头上有车，没车我瞎BB再多也是白搭。服务器相关的主要是链接服务器，常用的linux命令，以及能顺利运行VASP。
-
-### 知道怎么连接自己组内或者租赁的服务器
-
-后面大师兄会介绍一些挂载服务器的方法，但这些基本的连接服务器操作是基础。一般来说通过终端（terminal）来实现，Windows下有很多软件可以参考，比如：
-
-*  Winscp + Putty
-*  *MobaXterm*
-
-当然还有其他的软件，大师兄平时很少用Windows，推荐的就这两个。尤其是MobaXterm。 对于Ubuntu和Mac，则可以直接打开Terminal进行连接。
-
-### 初步学习使用基本的linux命令:   
-
-*  进入目录 : cd 
-
-* 移动文件(夹): mv 
-* 复制文件: cp 
-* 复制文件夹用: cp -r ; 注意 cp 和 -r 之间有个或者N个空格
-* 创建文件夹:mkdir     
-* 删除文件: rm ;    
-* 删除文件夹: rm  -r    
-* 强制删除文件夹: rm -fr  或者 rm -rf  (f 和 r 的顺序可以颠倒 )        
-* 显示目录下文件: ls 等命令;   
-* 这里大师兄就不再啰嗦了，后面教程里会介绍一些命令的使用，老司机们自动略过，新手自行百度：linux 命令，你会得到铺天盖地的信息。
-
-### 手上有可以正常运行的VASP程序
-
-* 组里面已经安装好vasp程序，或者使用超算中心的VASP程序，只要手上有可以正常运行的VASP即可。因为我们在本书里，**不讨论**：
-
-  *  去哪里下载VASP? 怎么安装VASP? 去哪里下载VASP的pseudo potentials?
-
-  - 前面的问题可以在QQ群里面讨论，也可以付费求助别人解决。
-  - 对于VASP的pseudo potentials，也就是POTCAR。
-    - 你老板买了VASP的版权，就直接问他要。
-    - 用的盗版VASP，找其他人要一份，但是发文章的时候会很麻烦。国内很多人都是找有版权的老师挂名，其实这是非常学术不道德的事情。一方面涉及到版权，一方面涉及到瞎几把挂名。
-    - 免费的可以用QE，CP2K，GPAW等开源的软件，没必要非得在VASP上面死磕。
-
-* 知道怎么提交VASP任务？
-
-  *  自己组里都有提交任务的脚本，如果没有的话只能自行动手解决咯，可以
-      *  找组里的师兄师姐帮忙;
-      *  第一个啃螃蟹的人，找老师解决，求助服务器商，求助超算管理员；
-
-
-### **程序语言学习**
-
-建议大家学习两个语言: bash 和 python。主要是为了辅助计算，节省时间，并拓展自己的思维方式。现在机器学习，人工智能越来越热，学会使用Python或者其他语言，或许可以上升到以后能否生存的高度了。
-
-* bash语言：日常terminal里面常用的基本命令，比如cd，ls这些，以及结合基本的逻辑语法，可以让你写出一些简单的小脚本。极大提高自己的工作效率；极大的意思就是别人一天或者N天的活，你可能几秒就完事。
-* Python 语言：python是一款语法简单，很容易上手的程序，有着丰富的数据库支持，目前深受科研人员的喜爱。**注意**，这里我们不讨论类似：python是一门高级语言，运行的时候跟机器交互性差，需要时间比C++长这样的问题。因为这是专业程序员的事。不出意外，看这本书的大部分人，能够用python写个小脚本，方便地处理自己的任务和数据，就已经非常棒了，快和慢，对于我们来说，顶死了也就几秒的问题，完全可以接受。
-* 学习程序语言，一方面可以极大地提高自己的工作效率，另一方面也可以改变自己看待事物的思维方式。  
-* 如果不喜欢Python，当然也可以学习其他的程序语言，C++，R，Java等。
+### Ex1.4 WSL-Ubuntu-Anaconda
 
 
 
-### 总结
+本节只针对与Windows用户，讨论如何在Windows中通过WSL（Windows Subsystem for Linux）使用Ubuntu18。 这也是大师兄本人目前最常用的一个工作方式。不一定要求大家一定都跟我一样，但是我知道肯定有跟同样喜欢这个工作方式的人。下面我们一步一步实现这个基本的工作配置。
 
-1）学习VASP前，先保证自己能顺利连接到服务器，然后运行VASP。这个大师兄没法帮忙，可以求助自己课题组中的师兄师姐，老板，或者群里咨询。
+#### 1  在Windows中安装WSL
 
-2）新手有大把的时间，建议系统性学习bash，python语言。Python可以换成其他你自己感兴趣的。
+Windows官网也有安装WSL的详细介绍：https://learn.microsoft.com/en-us/windows/wsl/install 
+
+1）按照以下的步骤开启运行 WSL 的系统功能：
+
+* 1.1 打开控制面板
+
+*  1.2 选择 程序 
+
+*  1.3 启用或关闭 Windows 功能 
+
+*  1.4 勾选以下选项：
+
+  - **适用于 Linux 的 Windows 子系统**。
+
+  - **虚拟机平台**（必需，支持 WSL2）。
+
+* 1.5 点击 **确定** 并等待安装完成 
+
+* 1.6 重启电脑。
+
+2） 安装WSL: 
+
+* 2.1 **打开 PowerShell (管理员模式)**
+
+  - 按 `Win + S` 打开搜索框，输入 **PowerShell**。
+
+  - 右键点击 **Windows PowerShell**，选择 **以管理员身份运行**。
+
+* **运行命令启用 WSL**: 输入以下命令并按回车。按提示完成安装后，重启计算机以应用更改。
+
+  * ```powershell
+    wsl --install
+    ```
+
+此命令会自动：
+
+- 启用 WSL 功能。
+- 安装 Linux 内核更新包。
+- 设置 WSL 版本为 WSL2。
+- 安装默认的 Linux 发行版（通常是 Ubuntu）。
+
+
+
+#### 2 安装Ubuntu 18.0 
+
+Windows 目前支持很多Ubuntu的发行版本，我们这里只安装 Ubuntu 18。原因只有一个：在U18上可以简单安装并使用p4vasp. 如果你不想使用这个软件，可以安装最新的Ubuntu 24. 
+
+1. **通过 Microsoft Store 安装 Ubuntu**
+
+   - 打开 **Microsoft Store**，搜索 **Ubuntu**。
+   - 在搜索结果中选择版本:  **Ubuntu 18.04.6 LTS**），点击 **获取** 或 **安装**。
+
+2. **初始化 Ubuntu**
+
+   - 安装完成后，运行 Ubuntu（在开始菜单搜索 "Ubuntu" 并点击运行）。
+   - 按提示设置用户名和密码:
+     - 用于 Linux 系统内登录，不影响 Windows 用户
+     - 用户名和密码简单容易记住即可，没必要很复杂。
+
+3. 设置Windows中的Terminal. 
+
+   * 在Microsoft Store搜索 **Windows Terminal**，安装完成。
+
+   * 桌面底部搜索框输入：Terminal， 点一下打开；
+
+   * 点Terminal 最上方 **向下的箭头** --> Startup --> Default Profile --> 选择Ubuntu18
+   * 再次在桌面底部搜索框输入：Terminal， 点一下，就直接进入Ubuntu18对应的Terminal。
+   * 也可以进行其他个性化的设置，这里就不再赘叙了。
+
+#### 3. 安装p4vasp  
+
+安装完成Ubuntu 18后，在屏幕底部的搜索框输入 Ubuntu， 点击Ubuntu 18。就直接弹出Terminal 了。按照下面的命令依次输入：
+
+```bash
+1. sudo apt-get update
+2. sudo apt-get install p4vasp  
+```
+
+这是迄今为止p4vasp最简单的安装办法了。其他的Ubuntu版本应该也可以安装，但是可能会有些麻烦，留给愿意折腾的人去解决吧。 如果你想安装其他的软件，可以使用跟p4vasp类似的方式，比如VIM, Tree, firefox浏览器等:
+
+```bash
+sudo apt-get install vim
+sudo apt-get install tree
+sudo apt install firefox
+```
+
+
+
+#### 5. 安装Anaconda 
+
+1. 通过Windows浏览器： 
+
+   * 1.1 下载安装包： [Download Now | Anaconda](https://www.anaconda.com/download/success) 输入邮箱后，在Anaconda Installers 找到Linux对应的版本（[64-Bit (x86) Installer (1007.9M)](https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh)）下载。此时，安装包下载到Windows的Downloads目录。
+
+   * 1.2 打开Ubuntu的Terminal，将安装包复制到Ubuntu的目录下，并运行：
+
+     * ```python
+       qli@bigbro:~$ cp /mnt/c/Users/bigbro/Downloads/Anaconda3-2024.10-1-Linux-x86_64.sh .
+       qli@bigbro:~$ bash Anaconda3-2024.10-1-Linux-x86_64.sh  
+       ```
+
+       按照提示一步一步操作即可，注意：Anaconda前面的协议部分很长，要一直摁着`Enter`键。
+
+   * Windows的版本也需要下载一份，并安装到Windows系统中。
+
+2. Ubuntu18的Firefox 浏览器： 
+
+   * 在 Ubuntu的Terminal中输入： firefox 命令，就可以打开浏览器了，输入Anaconda下载的网址，然后下载。（此时，安装包下载到Ubuntu的`~/Downloads`目录 ）
+
+     * ```bash
+       qli@bigbro:~$ firefox
+       ```
+
+       
+
+   * 进入Downloads目录并安装Anaconda：
+
+     * ```bash
+       qli@bigbro:~$ cd Downloads/
+       qli@bigbro:~/Downloads$ ls
+       Anaconda3-2024.10-1-Linux-x86_64.sh
+       qli@bigbro:~/Downloads$ bash Anaconda3-2024.10-1-Linux-x86_64.sh
+       ```
+
+
+
+#### 6. 安装ASE环境以及其他Python库。
+
+一旦完成Anaconda的安装后，剩下的很多事情都变得极其简单。下面的三个命令行：
+
+1） 创建一个以ASE这个软件为主的工作环境：
+
+2）激活这个环境
+
+3） 安装ASE
+
+```bash
+(base) qli@bigbro:~$ conda create -n ase 
+(base) qli@bigbro:~$ conda activate ase
+(ase) qli@qli:~$ conda install conda-forge::ase
+```
+
+最后一步的命令其实就类似Ubuntu中的 `sudo apt-get install p4vasp` 等后面需要安装一些Python相关的软件时，就可以直接用`conda install XXX` 这个命令来实现了。比如我们想要安装`pandas`这个软件，在Anaconda官网的库中（[Anaconda.org](https://anaconda.org/)）搜索pandas。 找到后点击，就可以进入[Pandas | Anaconda.org](https://anaconda.org/anaconda/pandas)并找到对应的下载命令。
+
+
+
+#### Ex1.4 小结：
+
+在本节的练习中，你会学到很多的操作知识。本节的内容，快则半天，慢则2-3天的时间来实践消化。
+
+* WSL是什么？ 怎么安装？
+* Ubuntu有哪些版本？我们为什么要安装 Ubuntu 18？
+* Windows中的Terminal怎么安装，如何个性化设置？
+* Ubuntu中怎么安装p4vasp以及其他软件？
+* Ubuntu中怎么安装Anaconda？
+* 通过Anaconda安装ASE以及其他Python软件/库。
