@@ -23,7 +23,4 @@
   * 官网的论坛有大量出错的例子，如果你计算遇到问题，很容易从里面找到答案。
 
 
-
-<img src=".\figs\Tip_Code.jpg" alt="Tip_Code" style="zoom:30%;" />
-
 ![Tip Code](figs/Tip_Code.png)

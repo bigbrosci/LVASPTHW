@@ -2,7 +2,7 @@
 
 
 
-本节介绍如何在Windows中通过WSL（Windows Subsystem for Linux）使用Ubuntu18。 这也是大师兄本人目前最常用的一个工作方式。不一定要求大家一定都跟我一样，但是我知道肯定有跟同样喜欢这个工作方式的人。另外，很多的步骤与Ubuntu以及Mac系统中都很相似。下面我们一步一步实现这个基本的工作配置。
+本节介绍如何在Windows中通过WSL（Windows Subsystem for Linux）使用Ubuntu18, 并安装p4vasp, Anaconda，以及通过Anaconda进一步安装其他Python软件。 这也是大师兄本人目前最常用的一个工作方式。不一定要求大家一定都跟我一样，但是我知道肯定有跟同样喜欢这个工作方式的人。另外，很多的步骤与Ubuntu以及Mac系统中都很相似。下面我们一步一步实现这个基本的工作配置。
 
 #### 1  在Windows中安装WSL
 
@@ -36,7 +36,7 @@ Windows官网也有安装WSL的详细介绍：https://learn.microsoft.com/en-us/
 
 * **运行命令启用 WSL**: 输入以下命令并按回车。按提示完成安装后，重启计算机以应用更改。
 
-  * ```powershell
+   ```powershell
     wsl --install
     ```
 
@@ -46,7 +46,6 @@ Windows官网也有安装WSL的详细介绍：https://learn.microsoft.com/en-us/
 - 安装 Linux 内核更新包。
 - 设置 WSL 版本为 WSL2。
 - 安装默认的 Linux 发行版（通常是 Ubuntu）。
-
 
 
 #### 2 安装Ubuntu 18.0 
@@ -93,7 +92,6 @@ sudo apt install firefox
 ```
 
 
-
 #### 5. 安装Anaconda 
 
 1. 通过Windows浏览器： 
@@ -102,7 +100,7 @@ sudo apt install firefox
 
    * 1.2 打开Ubuntu的Terminal，将安装包复制到Ubuntu的目录下，并运行：
 
-     * ```python
+      ```python
        qli@bigbro:~$ cp /mnt/c/Users/bigbro/Downloads/Anaconda3-2024.10-1-Linux-x86_64.sh .
        qli@bigbro:~$ bash Anaconda3-2024.10-1-Linux-x86_64.sh  
        ```
@@ -115,7 +113,7 @@ sudo apt install firefox
 
    * 在 Ubuntu的Terminal中输入： firefox 命令，就可以打开浏览器了，输入Anaconda下载的网址，然后下载。（此时，安装包下载到Ubuntu的`~/Downloads`目录 ）
 
-     * ```bash
+      ```bash
        qli@bigbro:~$ firefox
        ```
 
@@ -123,7 +121,7 @@ sudo apt install firefox
 
    * 进入Downloads目录并安装Anaconda：
 
-     * ```bash
+      ```bash
        qli@bigbro:~$ cd Downloads/
        qli@bigbro:~/Downloads$ ls
        Anaconda3-2024.10-1-Linux-x86_64.sh
