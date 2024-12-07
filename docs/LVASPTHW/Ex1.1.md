@@ -33,9 +33,9 @@ Windows用户在进行计算的时候，只要计算出错了，就要本能地�
 
 * 1） Windows 自带的NotePad。Windows下面编辑的输入文件，上传到服务器上后最好先执行: dos2unix 这个命令转换一下格式。
 
-   ```bash
-    $ dos2unix  INCAR
-   ```
+```bash
+$ dos2unix  INCAR
+```
 
 
   原因在于：Windows下面自带的记事本保存的文件与linux下的文件格式不匹配，提交任务的时候经常出问题，因此，对于Windows用户来说，如计算出错了，一定要首先想到 dos2linux 这个命令来解决问题！！！
@@ -81,18 +81,18 @@ Linux下面基本都会自带，不论你用什么操作系统，**必须要学�
 
   - 编辑 ~/.bashrc 文件，在文件最后，添加下面2行。
 
-     ```bash
-      export VESTA=/opt/VESTA-x86_64 
-      export PATH="$PATH:$VESTA"
-      ```
+```bash
+export VESTA=/opt/VESTA-x86_64 
+export PATH="$PATH:$VESTA"
+```
 
   - 在终端里面进行的操作如下：第一行打开`~/.bashrc`文件, 自己添加上面提到的两行即可，第二行更新下`~/bashrc`文件，第三行运行VESTA。
 
-     ```bash
-      $ vim ~/.bashrc
-      $ . ~/.bashrc
-      $ VESTA
-      ```
+```bash
+$ vim ~/.bashrc
+$ . ~/.bashrc
+$ VESTA
+```
 
 * 3）[**p4vasp**](http://www.p4vasp.at)
 
