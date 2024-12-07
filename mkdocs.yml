@@ -14,7 +14,7 @@ nav:
         - Ex1.4 平台三剑客:  LVASPTHW/Ex1.4.md
         - Ex1.5 Vasp的编译:  LVASPTHW/Ex1.5.md
       - Chapter 2 VASP的输入:
-        - Ex2.1 基本的概念:       LVASPTHW/Ex1.1.md
+        - Ex2.1 基本的概念:       LVASPTHW/Ex2.1.md
         - Ex2.2 INCAR的准备:      LVASPTHW/Ex2.2.md
         - Ex2.3 KPOINTS的准备:    LVASPTHW/Ex2.3.md
         - Ex2.4 POSCAR的准备:     LVASPTHW/Ex2.4.md
