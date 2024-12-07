@@ -33,9 +33,10 @@ Windows用户在进行计算的时候，只要计算出错了，就要本能地�
 
 * 1） Windows 自带的NotePad。Windows下面编辑的输入文件，上传到服务器上后最好先执行: dos2unix 这个命令转换一下格式。
 
-  ```bash
-  dos2unix  INCAR
-  ```
+  * ```bash
+    $ dos2unix  INCAR
+    ```
+
 
   原因在于：Windows下面自带的记事本保存的文件与linux下的文件格式不匹配，提交任务的时候经常出问题，因此，对于Windows用户来说，如计算出错了，一定要首先想到 dos2linux 这个命令来解决问题！！！
 
@@ -74,20 +75,25 @@ Linux下面基本都会自带，不论你用什么操作系统，**必须要学�
 * 无版权困扰，发文章的时候要注明下图是用VESTA做的，并引用下对应的文章，以示尊重。
 
 * Windows下面安装就不再介绍了，下载程序，解压，双击图标即可运行，相信大家都能搞定。
+
 * Linux下安装（不会的话，可以先跳过，暂时不要求）: 
 
   - 下载binary程序文件，本人解压后放到了/opt/VESTA-x86_64目录
+
   - 编辑 ~/.bashrc 文件，在文件最后，添加下面2行。
-  - ```
-    export VESTA=/opt/VESTA-x86_64 
-    export PATH="$PATH:$VESTA"
-    ```
+
+    - ```bash
+      export VESTA=/opt/VESTA-x86_64 
+      export PATH="$PATH:$VESTA"
+      ```
+
   - 在终端里面进行的操作如下：第一行打开`~/.bashrc`文件, 自己添加上面提到的两行即可，第二行更新下`~/bashrc`文件，第三行运行VESTA。
-  - ```
-    $ vim ~/.bashrc
-    $ . ~/.bashrc
-    $ VESTA
-    ```
+
+    - ```bash
+      $ vim ~/.bashrc
+      $ . ~/.bashrc
+      $ VESTA
+      ```
 
 * 3）[**p4vasp**](http://www.p4vasp.at)
 
@@ -139,6 +145,4 @@ Linux下面基本都会自带，不论你用什么操作系统，**必须要学�
 
    2. Anaconda 必须要安装在你的电脑上。
 
-      
-
-<img src=".\figs\Tip_Code.jpg" alt="Tip_Code" style="zoom:30%;" />
+![Tip Code](figs/Tip_Code.png)
