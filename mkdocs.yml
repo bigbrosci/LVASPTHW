@@ -13,3 +13,34 @@ nav:
         - Ex1.3 连接服务器:  LVASPTHW/Ex1.3.md
         - Ex1.4 平台三剑客:  LVASPTHW/Ex1.4.md
         - Ex1.5 Vasp的编译:  LVASPTHW/Ex1.5.md
+      - Chapter 2 VASP的输入:
+        - Ex2.1 基本的概念:       LVASPTHW/Ex1.1.md
+        - Ex2.2 INCAR的准备:      LVASPTHW/Ex2.2.md
+        - Ex2.3 KPOINTS的准备:    LVASPTHW/Ex2.3.md
+        - Ex2.4 POSCAR的准备:     LVASPTHW/Ex2.4.md
+        - Ex2.5 POTCAR的准备:     LVASPTHW/Ex2.5.md
+        - Ex2.6 输入文件检查:     LVASPTHW/Ex2.5.md
+        - Ex2.7 基本的Linux命令:  LVASPTHW/Ex2.5.md
+        - Ex2.8 连接服务器:       LVASPTHW/Ex2.5.md
+        - Ex2.9 VASP任务的提交:   LVASPTHW/Ex2.5.md
+      - Chapter 3 VASP的输出:
+        - Ex3.1 基本的概念:    LVASPTHW/Ex3.1.md
+        - Ex3.2 CONTCAR:       LVASPTHW/Ex3.2.md
+        - Ex3.3 OSZICAR:       LVASPTHW/Ex3.3.md
+        - Ex3.4 OUTCAR:        LVASPTHW/Ex3.4.md
+        - Ex3.5 DOSCAR:        LVASPTHW/Ex3.5.md
+        - Ex3.6 PROCAR:        LVASPTHW/Ex3.6.md
+        - Ex3.7 XDATCAR:       LVASPTHW/Ex3.7.md
+        - Ex3.8 CHG,CHGCAR:    LVASPTHW/Ex3.8.md
+        - Ex3.9 WAVECAR:       LVASPTHW/Ex3.9.md
+        - Ex3.10 vasprun.xml:  LVASPTHW/Ex3.10.md
+        - Ex3.11 判断计算结束: LVASPTHW/Ex3.11.md
+        - Ex3.12 检查计算结果: LVASPTHW/Ex3.12.md
+      - Chapter 4 VASP任务的批量处理:
+        - Ex4.1 Linux下的批量处理:    LVASPTHW/Ex4.1.md
+        - Ex4.2 for + sed:            LVASPTHW/Ex4.2.md
+        - Ex4.3 for + sed + KPOINTS:  LVASPTHW/Ex4.3.md
+        - Ex4.4 for + sed + POSCAR:   LVASPTHW/Ex4.4.md
+        - Ex4.5 VASP任务的批量提交-1: LVASPTHW/Ex4.5.md
+        - Ex4.6 VASP任务的批量提交-2: LVASPTHW/Ex4.6.md
+
