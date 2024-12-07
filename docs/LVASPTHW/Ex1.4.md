@@ -2,7 +2,7 @@
 
 
 
-本节只针对与Windows用户，讨论如何在Windows中通过WSL（Windows Subsystem for Linux）使用Ubuntu18。 这也是大师兄本人目前最常用的一个工作方式。不一定要求大家一定都跟我一样，但是我知道肯定有跟同样喜欢这个工作方式的人。下面我们一步一步实现这个基本的工作配置。
+本节介绍如何在Windows中通过WSL（Windows Subsystem for Linux）使用Ubuntu18。 这也是大师兄本人目前最常用的一个工作方式。不一定要求大家一定都跟我一样，但是我知道肯定有跟同样喜欢这个工作方式的人。另外，很多的步骤与Ubuntu以及Mac系统中都很相似。下面我们一步一步实现这个基本的工作配置。
 
 #### 1  在Windows中安装WSL
 
@@ -162,4 +162,3 @@ sudo apt install firefox
 * Ubuntu中怎么安装p4vasp以及其他软件？
 * Ubuntu中怎么安装Anaconda？
 * 通过Anaconda安装ASE以及其他Python软件/库。
-![Tip Code](figs/Tip_Code.png)
