@@ -1,7 +1,6 @@
 ### Ex1.4 WSL-Ubuntu-Anaconda
 
 
-
 本节介绍如何在Windows中通过WSL（Windows Subsystem for Linux）使用Ubuntu18, 并安装p4vasp, Anaconda，以及通过Anaconda进一步安装其他Python软件。 这也是大师兄本人目前最常用的一个工作方式。不一定要求大家一定都跟我一样，但是我知道肯定有跟同样喜欢这个工作方式的人。另外，很多的步骤与Ubuntu以及Mac系统中都很相似。下面我们一步一步实现这个基本的工作配置。
 
 #### 1  在Windows中安装WSL
@@ -91,44 +90,39 @@ sudo apt-get install tree
 sudo apt install firefox
 ```
 
-
 #### 5. 安装Anaconda 
 
 1. 通过Windows浏览器： 
 
-   * 1.1 下载安装包： [Download Now | Anaconda](https://www.anaconda.com/download/success) 输入邮箱后，在Anaconda Installers 找到Linux对应的版本（[64-Bit (x86) Installer (1007.9M)](https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh)）下载。此时，安装包下载到Windows的Downloads目录。
+ * 1.1 下载安装包： [Download Now | Anaconda](https://www.anaconda.com/download/success) 输入邮箱后，在Anaconda Installers 找到Linux对应的版本（[64-Bit (x86) Installer (1007.9M)](https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh)）下载。此时，安装包下载到Windows的Downloads目录。
 
-   * 1.2 打开Ubuntu的Terminal，将安装包复制到Ubuntu的目录下，并运行：
+ * 1.2 打开Ubuntu的Terminal，将安装包复制到Ubuntu的目录下，并运行：
 
-      ```python
-       qli@bigbro:~$ cp /mnt/c/Users/bigbro/Downloads/Anaconda3-2024.10-1-Linux-x86_64.sh .
-       qli@bigbro:~$ bash Anaconda3-2024.10-1-Linux-x86_64.sh  
-       ```
+```python
+qli@bigbro:~$ cp /mnt/c/Users/bigbro/Downloads/Anaconda3-2024.10-1-Linux-x86_64.sh .
+qli@bigbro:~$ bash Anaconda3-2024.10-1-Linux-x86_64.sh  
+```
 
        按照提示一步一步操作即可，注意：Anaconda前面的协议部分很长，要一直摁着`Enter`键。
 
-   * Windows的版本也需要下载一份，并安装到Windows系统中。
+ * 1.3 Windows的版本也需要下载一份，并安装到Windows系统中。
 
 2. Ubuntu18的Firefox 浏览器： 
 
-   * 在 Ubuntu的Terminal中输入： firefox 命令，就可以打开浏览器了，输入Anaconda下载的网址，然后下载。（此时，安装包下载到Ubuntu的`~/Downloads`目录 ）
+ * 在 Ubuntu的Terminal中输入： firefox 命令，就可以打开浏览器了，输入Anaconda下载的网址，然后下载。（此时，安装包下载到Ubuntu的`~/Downloads`目录 ）
 
-      ```bash
-       qli@bigbro:~$ firefox
-       ```
+```bash
+qli@bigbro:~$ firefox
+```
 
-       
+ * 进入Downloads目录并安装Anaconda：
 
-   * 进入Downloads目录并安装Anaconda：
-
-      ```bash
-       qli@bigbro:~$ cd Downloads/
-       qli@bigbro:~/Downloads$ ls
-       Anaconda3-2024.10-1-Linux-x86_64.sh
-       qli@bigbro:~/Downloads$ bash Anaconda3-2024.10-1-Linux-x86_64.sh
-       ```
-
-
+```bash
+qli@bigbro:~$ cd Downloads/
+qli@bigbro:~/Downloads$ ls
+Anaconda3-2024.10-1-Linux-x86_64.sh
+qli@bigbro:~/Downloads$ bash Anaconda3-2024.10-1-Linux-x86_64.sh
+```
 
 #### 6. 安装ASE环境以及其他Python库。
 
@@ -147,7 +141,6 @@ sudo apt install firefox
 ```
 
 最后一步的命令其实就类似Ubuntu中的 `sudo apt-get install p4vasp` 等后面需要安装一些Python相关的软件时，就可以直接用`conda install XXX` 这个命令来实现了。比如我们想要安装`pandas`这个软件，在Anaconda官网的库中（[Anaconda.org](https://anaconda.org/)）搜索pandas。 找到后点击，就可以进入[Pandas | Anaconda.org](https://anaconda.org/anaconda/pandas)并找到对应的下载命令。
-
 
 
 #### Ex1.4 小结：

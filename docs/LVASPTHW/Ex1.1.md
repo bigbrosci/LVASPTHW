@@ -79,7 +79,7 @@ Linux下面基本都会自带，不论你用什么操作系统，**必须要学�
 
   - 下载binary程序文件，本人解压后放到了/opt/VESTA-x86_64目录
 
-  - 编辑 ~/.bashrc 文件，在文件最后，添加下面2行。
+  - 编辑 `~/.bashrc` 文件，在文件最后，添加下面2行。
 
 ```bash
 export VESTA=/opt/VESTA-x86_64 
@@ -121,27 +121,26 @@ $ VESTA
 - 4）如果不喜欢Python，当然也可以学习其他的程序语言，C++，R，Java等。但大师兄不会，所以本书中与程序相关的内容都是Bash和Python.
 
 
-
 ### **Ex1.1 总结:** 
 
 初学者学习本书，知道自己在硬件和软件这两个方向上所必须具有的一些技能。
 
 1. 熟练使用一个操作系统；会创建，编辑文本，写入，和保存文件：
 
-   1. Windows 用户Notepad++必须掌握；
-   2. Linux用户可以vim或者其他编辑器。
-   3. 不管什么操作系统，VIM是必须要学习的。
+ 1. Windows 用户Notepad++必须掌握；
+ 2. Linux用户可以vim或者其他编辑器。
+ 3. 不管什么操作系统，VIM是必须要学习的。
 
 2. 安装好或者会初步使用一款建模软件：
-   1. **p4vasp**，**ASE**安装在Windows和Ubuntu系统上；
-   2. **VESTA** 安装在Windows，Ubuntu，Mac系统上；
-   3. **Materials Studio** 安装在Windows上
-   4. **Gaussian View**安装在Windows, Ubuntu, Mac系统上。
+ 1. **p4vasp**，**ASE**安装在Windows和Ubuntu系统上；
+ 2. **VESTA** 安装在Windows，Ubuntu，Mac系统上；
+ 3. **Materials Studio** 安装在Windows上
+ 4. **Gaussian View**安装在Windows, Ubuntu, Mac系统上。
 
 3.  做好学习Bash和Python这两门语言的准本。对于Fresh的研究生，博士生，因为你们有大把的时间，建议系统性学习bash，python语言。当然，Python可以换成其他你自己感兴趣的。
 
-   1. Bash 语言主要用在terminal上面，暂时不用安装，后面会介绍；
+ 1. Bash 语言主要用在terminal上面，暂时不用安装，后面会介绍；
 
-   2. Anaconda 必须要安装在你的电脑上。
+ 2. Anaconda 必须要安装在你的电脑上。
 
 ![Tip Code](figs/Tip_Code.png)
