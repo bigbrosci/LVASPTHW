@@ -70,4 +70,3 @@ VASP的计算就跟开车一样，设计到很多的内容，比如大街上的�
 2）在了解服务器连接，VASP任务提交的过程，是新手学习Terminal中命令操作的黄金时期。建议系统性学习Bash命令。多在网上搜资料，多多询问ChatGPT。
 
 ![Tip Code](figs/Tip_Code.png)
-

@@ -55,7 +55,7 @@ Windows 目前支持很多Ubuntu的发行版本，我们这里只安装 Ubuntu 1
 
 1. **通过 Microsoft Store 安装 Ubuntu**
 
-   - 打开 **Microsoft Store**，搜索 **Ubuntu**。
+   - 屏幕底部搜索并打开 **Microsoft Store**，然后搜索 **Ubuntu**。
    - 在搜索结果中选择版本:  **Ubuntu 18.04.6 LTS**），点击 **获取** 或 **安装**。
 
 2. **初始化 Ubuntu**
@@ -162,3 +162,4 @@ sudo apt install firefox
 * Ubuntu中怎么安装p4vasp以及其他软件？
 * Ubuntu中怎么安装Anaconda？
 * 通过Anaconda安装ASE以及其他Python软件/库。
+![Tip Code](figs/Tip_Code.png)
