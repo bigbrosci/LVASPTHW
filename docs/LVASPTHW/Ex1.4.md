@@ -99,12 +99,13 @@ sudo apt install firefox
 
  * 1.2 打开Ubuntu的Terminal，将安装包复制到Ubuntu的目录下，并运行：
 
+
 ```python
 qli@bigbro:~$ cp /mnt/c/Users/bigbro/Downloads/Anaconda3-2024.10-1-Linux-x86_64.sh .
 qli@bigbro:~$ bash Anaconda3-2024.10-1-Linux-x86_64.sh  
 ```
 
-       按照提示一步一步操作即可，注意：Anaconda前面的协议部分很长，要一直摁着`Enter`键。
+按照提示一步一步操作即可，注意：Anaconda前面的协议部分很长，要一直摁着`Enter`键。
 
  * 1.3 Windows的版本也需要下载一份，并安装到Windows系统中。
 
@@ -129,11 +130,11 @@ qli@bigbro:~/Downloads$ bash Anaconda3-2024.10-1-Linux-x86_64.sh
 
 一旦完成Anaconda的安装后，剩下的很多事情都变得极其简单。下面的三个命令行：
 
-1） 创建一个以ASE这个软件为主的工作环境：
+* 创建一个以ASE这个软件为主的工作环境：
 
-2）激活这个环境
+* 激活这个环境
 
-3） 安装ASE
+* 安装ASE
 
 ```bash
 (base) qli@bigbro:~$ conda create -n ase 
@@ -154,3 +155,6 @@ qli@bigbro:~/Downloads$ bash Anaconda3-2024.10-1-Linux-x86_64.sh
 * Ubuntu中怎么安装p4vasp以及其他软件？
 * Ubuntu中怎么安装Anaconda？
 * 通过Anaconda安装ASE以及其他Python软件/库。
+
+
+![Tip Code](figs/Tip_Code.png)
