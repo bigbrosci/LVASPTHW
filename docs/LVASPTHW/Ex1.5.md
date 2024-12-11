@@ -1,63 +1,166 @@
-### Ex1.5 VASP的编译
+### Ex1.5 磨剑
 
 
-本节简单介绍如果编译基础款的VASP。这里说的基础款指的是直接安装从官网下载的VASP版本。我们在计算中，常常根据自己的计算需求来选择不同的版本，比如加了溶剂化效应的，考虑VTST计算过渡态的，计算Wannier90的，亦或者是只优化xy轴的版本等等。它们都是在VASP官网的版本上修改代码，重新编译的。原理上来说，只要官网的版本可以顺利编译，其他版本的编译也只是一个时间问题，后面随着练习内容进行介绍。
 
-我们简单理一下编译的思路，其实主要有以下四方面：
+Ex1.4讨论了Windows系统中的三剑客： WSL， Ubuntu，和 Anaconda。 本节趁机会再分享一些具体的细节内容，好好打磨这三把剑，把计算砍个稀吧碎。 
 
- * 编译前的准备工作（一）
 
-    * 浏览官网：<https://www.vasp.at/wiki/index.php/Installing_VASP.6.X.X>   我们从官网描述的的:`Requirements`可以发现发现，不管是Compiler, Numberical Libraries, 还是MPI，它们都有一个共同的要求，就是`intel-opneapi`。 `Intel OneAPI` 是Intel推出的一套统一的编程模型和开发工具，旨在简化不同硬件平台（如 CPU、GPU、FPGA 等）上的开发工作。它是一款免费，功能强大，且全面的软件包，有兴趣的可以去官网看看相关介绍。
-*  因为编译 VASP 需要用 `Math Kernel Library` 和 `MPI Library`，我们需要下载 `Base toolkit` 和 `HPC toolkit` 。下载连接如下： 
-    
-<https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html#hpc-kit>
+#### WSL 
+
+WSL 可以跟Windows的VS-Code无缝衔接。使用Python写代码，脚本的时候也很方便。具体去参考我们下一节的教程。
+
+
+#### Ubuntu
+
+对于Ubuntu，我们这里再细分成三个方面： （1）常用软件的安装，（2）  文件的传输 ， （3）挂载硬盘，（4）快捷方式。
+
+2.1 常用软件就直接列举对应的安装命令，后面的教程会具体介绍它们的功能，目前需要你自己去搜索学习掌握。
+
+```bash
+sudo apt-get  update 
+sudo apt-get  p4vasp
+sudo apt-get install libxcb-* 
+sudo apt-get install vim
+sudo apt-get install tree
+sudo apt install firefox
+### Image  Convert  install.
+sudo apt update && sudo apt upgrade
+sudo apt install libpng-dev libjpeg-dev libtiff-dev
+sudo apt install imagemagick   # For Image
+sudo apt install default-jre   # For Jmol 
+sudo apt-get install sshfs
+1. sudo apt-get install ttf-mscorefonts-installer ### Install Times New-Roman in Ubuntu
+2. use "Tab" key to select then "Enter" to Confirm
+3. rm /home/XXX/.cache/matplotlib/ -fr   ### XXX is your usrname 
+```
+
+2.2 文件的传输：
+
+Ubuntu是Subsystem，但是Ubuntu跟Windows的文件系统是连通的。怎么从Ubuntu进入到Windows的目录呢？ 前面我们安装Anaconda的时候提到了一下，这里再具体讲一下： 在Ubuntu的terminal中敲命令。把bigbro换成你自己的用户名。这样我们就可以进到Windows的Downloads文件。
+
+```bash 
+ cd /mnt/c/Users/bigbro/Downloads/
+```
+
+同理，我们要进入到Windows的桌面：
+
+```bash 
+cd /mnt/c/Users/bigbro/Desktop
+```
+
+我们也可以建立一个超链接把Desktop放在Ubuntu的Home目录下：
+
+```bash 
+ln -s /mnt/c/Users/bigbro/Desktop ~/Desktop
+```
+
+下次想去Windows桌面的时候，直接敲命令：
+
+```bash
+cd ~/Desktop
+```
+
+此外，大师兄再介绍另外一个快捷的方式。
+
+```bash 
+1. vi ~/.bashrc	
+2. export DES='/mnt/c/Users/bigbro/Desktop'
+3. cd $DES
+```
+
+第一行打开 `.bashrc`文件，第二行把桌面的目录作为一个变量让Ubuntu记住， 第三行是进去桌面的命令。
+
+一旦我们的目录或者path跟Windows 打通，数据的传输，无非就是敲打`cp`, `mv`, `rsync` 之类的命令了。
+
+
+
+2.3 挂载硬盘
+
+做计算，没有硬盘肯定是不行的。如果我们的数据在硬盘里面，该怎么样直接连接呢？ 同样编辑`.bashrc`文件，添加以下的几行。注意：大师兄的电脑没有分区，只有一个C盘，所以挂载的硬盘第一个是D盘，如果你已经把电脑分区了，盘符别写错了。
+
+
+
+```bash 
+1. mkdir ~/ssd ~/sse ~/ssf 
+2. vi ~/.bashrc
+3. alias  ssd='sudo mount -t drvfs D: ssd'
+4. alias  sse='sudo mount -t drvfs E: sse'
+5. alias  ssf='sudo mount -t drvfs F: ssf'
+6. cd ~ && ssd 
+7. cd ssd 
+```
+
+1. 先创见几个硬盘挂载的目录，ssd，sse,  ssf，分别对应的 D， E， F盘。名字随意，你也可以改成其他的。
+
+2. 打开`~/.bashrc`文件，添加第3-5行的内容。
+
+3. 'ssd=' 中的ssd 是我自己定义的一个挂载硬盘到ssd目录的命令。
+
+4. 第6行是在terminal中挂载硬盘所需要敲的命令。 
+
+5. 第7行是进入硬盘的命令，对应alias行中`=`前的命令。
+
    
- *  也可以通过命令下载以及安装，具体参考下载网页中`Command-Line Installation Instructions`的描述。 
 
-```shell
-qli@bigbro$ ls
-l_BaseKit_p_20XXX_offline.sh  l_HPCKit_p_XXX_offline.sh
-qli@bigbro$ sh l_BaseKit_p_20XXX_offline.sh  
-qli@bigbro$ sh l_HPCKit_p_XXX_offline.sh
+2.4 快捷方式：
+
+对于快捷方式，2.2也已经讲过了，学会合理使用`.bashrc`这个文件。但是提前打好预防针：修改前一定要先备份当前的版本（第一行命令），万一写错了还能还原（第二行命令）。
+
+```bash 
+1. cp ~/.bashrc  bashrc_2024_12_10
+2. cp bashrc_2024_12_10 ~/.bashrc
 ```
 
-运行上面命令首先会解压安装包。注意的有下面三点：
+下面分享几个超级实用的例子：
 
-- 下载完成后进行安装,注意顺序：先安装 `Base toolkit`，然后是`HPCkit`。
-
-+ 解压结束后，如果是用 `xshell` 远程登陆的话，会问要不要`run X11`图形界面。大家有图形界面的话就用，没有的话就选择`No`。其他的按照流程一步一步来即可。
-+ 安装 `Base toolkit` 的时候，大家可以选择 `Accept & Customize` 取消安装 `Python` 解释器，从而节省时间。 `HPC toolkit` 不需要自己`customize`。 
-
-#### 设置 Intel OneAPI 环境变量
-
-设置 `Intel OneAPI` 环境变量需要用到 `/home/xxx/intel/oneapi/setvars.sh` 文件。大家把 `source /home/xxx/intel/oneapi/setvars.sh` 添加到 `~/.bashrc` 文件中即可。xxx 为`username`。比如用户名为`bigbro`:
-
-```shell
-echo 'source /home/bigbro/intel/oneapi/setvars.sh' >> ~/.bashrc
+```bash
+alias ..='cd .. && ls '
+alias ...='cd ../../ && ls'
+alias ....='cd ../../../ && ls '
+alias cp='cp -r'
+alias des='cd /mnt/c/Users/lqlhz/Desktop'
 ```
 
-* 编译前的准备工作（二）
+敲不同的点，就直接实现`cd`进入上1-3级 的目录，然后显示内容。
 
- 另一个准备就是下载VASP的安装包了。这个自己去VASP portal下载（如果有账户的话），没有账户，在群里发个红包求助下，大家也愿意帮忙。
+有时候用cp 复制文件夹不加 `-r` 经常出错，直接把`cp` 默认成 加了 `-r` 的。
 
-* 编译VASP（三）
+敲命令`des` 直接进到Windows的桌面。
 
-需要注意的是：OneAPI 2024.0 以及之后的版本中，`ICC` 已经被替换成了`ICX` : **Intel® C++ Compiler Classic (icc) is deprecated and was discontinued in the oneAPI 2024.0 release.** 相应的，我们在编译前，要将makefile.include 中的`icc`和`icpc` 需要换成 `icx` 和 `icpx` （在第六行的操作中将第1，2行更新到makefile.include文件）; 然后静待安装成功即可。
+剩下的就是你自己根据习惯，爱好修改的事情了。
 
-```shell
-1 CC_LIB      = icx
-2 CXX_PARS    = icpx
-3 tar zvxf vasp.5.4.4.tar.gz
-4 cd vasp.5.4.4/
-5 cp arch/makefile.include.linux_intel makefile.include
-6 vi makefile.include
-7 make all
+
+####  Anaconda 
+
+废话不多说了，直接上命令：
+
+```bash 
+conda create -n ase 
+conda install conda-forge::ase
+conda install anaconda::seaborn
+conda install conda-forge::rdkit
+conda install --channel conda-forge pymatgen
+conda install conda-forge::pandas
+conda install conda-forge::openbabel  (conflict, needs another env)
+conda install anaconda::jupyter  ## Jupyter does Not work well in WSL
+conda install anaconda::spyder   ## Spyder does Not work well in WSL
 ```
 
-**注意事项：**
+前面创建ASE的环境并安装ASE已经提到过了。
 
-+ 安装 `Base toolkit` 的时候，大家可以选择 `Accept & Customize` 取消安装 `Python` 解释器，从而节省时间。
-+ OneAPI 2024.0以及之后版本中ICC被替换成了ICX, `makefile.include`需要相应的改变。
+seaborn 用来画heatmap。 
+
+rdkit 化学信息学必用，非常强大。
+
+pymatgen： 也非常强大，跟ASE有一拼。
+
+pandas 读取excel, csv数据，
+
+openbabel 不同计算软件格式的转换。跟前面的冲突，得专门创建一个新的工作环境。
+
+另外，需要注意的是：
+
+不建议在WSL下运行Spyder，Jupyter之类的代码编写工具，也别运行VASP。阉割版的ubuntu毕竟性能一般，还会跟Windows抢资源。 最后的两个命令适合在Windows系统安装的Anaconda中运行。 底部搜索输入 `Anaconda`, 打开`Anaconda Powershell Prompt` 。其他的跟上面提到的类似。剩下的，学习工作中，遇到什么，就对应安装即可。
 
 
 ![Tip Code](figs/Tip_Code.png)

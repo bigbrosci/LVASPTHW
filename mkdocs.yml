@@ -5,14 +5,17 @@ site_url: http://www.bigbrosci.cn
 
 nav:
     - 前言: Introduction.md
-    - 序言: index.md
+    - 紧急通知: index.md
+    - 序言: 序言.md
     - LVASPTHW:
       - Chapter 1 学习的基本要求:
         - Ex1.1 硬件和软件:  LVASPTHW/Ex1.1.md
         - Ex1.2 基础知识:    LVASPTHW/Ex1.2.md
         - Ex1.3 连接服务器:  LVASPTHW/Ex1.3.md
         - Ex1.4 平台三剑客:  LVASPTHW/Ex1.4.md
-        - Ex1.5 Vasp的编译:  LVASPTHW/Ex1.5.md
+        - Ex1.5 磨剑:  LVASPTHW/Ex1.5.md
+        - Ex1.6 磨刀:  LVASPTHW/Ex1.6.md   
+        - Ex1.7 Vasp的编译:  LVASPTHW/Ex1.7.md
       - Chapter 2 VASP的输入:
         - Ex2.1 基本的概念:       LVASPTHW/Ex2.1.md
         - Ex2.2 INCAR的准备:      LVASPTHW/Ex2.2.md
