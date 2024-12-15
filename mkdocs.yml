@@ -13,8 +13,9 @@ nav:
         - Ex1.2 基础知识:    LVASPTHW/Ex1.2.md
         - Ex1.3 连接服务器:  LVASPTHW/Ex1.3.md
         - Ex1.4 平台三剑客:  LVASPTHW/Ex1.4.md
-        - Ex1.5 磨剑:  LVASPTHW/Ex1.5.md
-        - Ex1.6 磨刀:  LVASPTHW/Ex1.6.md   
+        - Ex1.5 磨剑:        LVASPTHW/Ex1.5.md
+        - Ex1.6 磨刀:        LVASPTHW/Ex1.6.md   
+        - Ex1.7 Python IDE:  LVASPTHW/Ex1.7.md   
         - Ex1.8 Vasp的编译:  LVASPTHW/Ex1.8.md
       - Chapter 2 VASP的输入:
         - Ex2.1 基本的概念:       LVASPTHW/Ex2.1.md
