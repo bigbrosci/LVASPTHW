@@ -15,7 +15,7 @@ nav:
         - Ex1.4 平台三剑客:  LVASPTHW/Ex1.4.md
         - Ex1.5 磨剑:  LVASPTHW/Ex1.5.md
         - Ex1.6 磨刀:  LVASPTHW/Ex1.6.md   
-        - Ex1.7 Vasp的编译:  LVASPTHW/Ex1.7.md
+        - Ex1.8 Vasp的编译:  LVASPTHW/Ex1.8.md
       - Chapter 2 VASP的输入:
         - Ex2.1 基本的概念:       LVASPTHW/Ex2.1.md
         - Ex2.2 INCAR的准备:      LVASPTHW/Ex2.2.md
@@ -46,6 +46,7 @@ nav:
         - Ex4.4 for + sed + POSCAR:   LVASPTHW/Ex4.4.md
         - Ex4.5 VASP任务的批量提交-1: LVASPTHW/Ex4.5.md
         - Ex4.6 VASP任务的批量提交-2: LVASPTHW/Ex4.6.md
-    - 博士(后）位置:
+    - 硕/博/后/研位置:
+        - 工作位置分享指南:      JOBS/job_intro.md   
         - JOB1 Dec 9–15, 2024:   JOBS/job_2024_12_09.md
         - JOB2 Dec 9–15, 2024:   JOBS/job_2024_12_15.md
