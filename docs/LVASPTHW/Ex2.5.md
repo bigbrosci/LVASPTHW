@@ -11,7 +11,6 @@
 没买VASP版权的话，就跟偷别人车上路一样，被交警逮住就坏事。平时自己练习还好，发文章的时候就犯难了。趁现在还早，如果组里没有版权，建议转到QE，CP2K等开源软件，工作照样继续，文章照样发。坚持使用的话，建议让老板出钱买版权，如果他不买还让你算，你就先忍着，等文章发表，毕业拿到学位之后，拿文章当举报信勒索他一票，不要太贪，十万块钱应该可以拿到手。
 
 
-
 **POTCAR中各项的含义**
 
 POTCAR中有很多信息，对于大部分的参数，本人也是只认识字母和数字，不知具体含义，所以只能介绍一下在实际计算中会用到的一些参数。本节用Fe的POTCAR中前面的几行作为一个例子，简单介绍一下。
@@ -95,13 +94,11 @@ Ge_h/POTCAR:   ENMAX  =  410.425; ENMIN  =  307.818 eV
 Ge_sv_GW/POTCAR:   ENMAX  =  410.425; ENMIN  =  307.818 eV
 ```
 
-
-
 **POTCAR的选择**
 
-既然对于同一个元素，存在那么多的POTCAR类型，计算的时候我们改怎么选择呢？这里大师兄只能给的建议是：如果没有特别的需求，直接采用VASP官网推荐的即可。参考链接：
+既然对于同一个元素，存在那么多的POTCAR类型，计算的时候我们改怎么选择呢？这里大师兄只能给的建议是：如果没有特别的需求，直接采用VASP官网推荐的即可, 去VASP Wiki: <https://www.vasp.at/wiki/index.php/Available_pseudopotentials> 
 
-https://cms.mpi.univie.ac.at/vasp/vasp/Recommended_PAW_potentials_DFT_calculations_using_vasp_5_2.html
+**Standard potentials** --> **List of PBE potentials** --> **加粗的即为vasp所推荐的**
 
 我们在计算的时候，根据体系中的元素，将这些元素的POTCAR结合起来，组成一个新的POTCAR，这个结合的步骤，我们需要用到Linux的另一个命令：`cat`。比如VASP官网的例子，体系中含有Al， C，H三种元素。
 

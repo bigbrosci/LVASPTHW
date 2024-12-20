@@ -19,14 +19,15 @@ nav:
         - Ex1.8 Vasp的编译:  LVASPTHW/Ex1.8.md
       - Chapter 2 VASP的输入:
         - Ex2.1 基本的概念:       LVASPTHW/Ex2.1.md
-        - Ex2.2 INCAR的准备:      LVASPTHW/Ex2.2.md
+        - Ex2.2 INCAR的介绍:      LVASPTHW/Ex2.2.md
         - Ex2.3 KPOINTS的准备:    LVASPTHW/Ex2.3.md
         - Ex2.4 POSCAR的准备:     LVASPTHW/Ex2.4.md
-        - Ex2.5 POTCAR的准备:     LVASPTHW/Ex2.5.md
-        - Ex2.6 输入文件检查:     LVASPTHW/Ex2.6.md
-        - Ex2.7 基本的Linux命令:  LVASPTHW/Ex2.7.md
-        - Ex2.8 连接服务器:       LVASPTHW/Ex2.8.md
-        - Ex2.9 VASP任务的提交:   LVASPTHW/Ex2.9.md
+        - Ex2.5 POTCAR的介绍:     LVASPTHW/Ex2.5.md
+        - Ex2.6 POTCAR的制备:     LVASPTHW/Ex2.6.md
+        - Ex2.7 输入文件检查:     LVASPTHW/Ex2.7.md
+        - Ex2.8 基本的Linux命令:  LVASPTHW/Ex2.8.md
+        - Ex2.9 连接服务器:       LVASPTHW/Ex2.9.md
+        - Ex2.10 VASP任务的提交:   LVASPTHW/Ex2.10.md
       - Chapter 3 VASP的输出:
         - Ex3.1 基本的概念:    LVASPTHW/Ex3.1.md
         - Ex3.2 CONTCAR:       LVASPTHW/Ex3.2.md
