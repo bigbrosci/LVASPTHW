@@ -106,9 +106,9 @@ print("元素列表:", elements)
 
 ```
 (base) qli@bigbro:~/test/example$ sed -n 6p POSCAR
-   Fe   S    H
+   Ru   S    H
 (base) qli@bigbro:~/test/example$ head -n 6 POSCAR |tail -n 1
-   Fe   S    H
+   Ru   S    H
 ```
 
 **注意**：Bash 计数从1开始，这里就是第6行。
@@ -224,4 +224,4 @@ POTCAR 文件已生成: POTCAR
 5. 使用 Python 或 Bash 脚本自动化整个流程，方便快捷。
 6. 熟悉并学习`bash`中`cat`, `sed` , `head`, `tail`, `for` 循环，以及Python脚本的写法。
 7. VASP 官方教程：<https://www.vasp.at/wiki/index.php/Preparing_a_POTCAR>
-8. 脚本内容已经在文章里面了，自己写一个就能直接运行。出现问题可以找我要脚本(微信BigBroSci)，但是要收费20块钱。
+8. 脚本内容已经在文章里面了，自己复制粘贴写一个就能直接运行。出现问题可以找我要脚本(微信BigBroSci)，但是要收费20块钱。
