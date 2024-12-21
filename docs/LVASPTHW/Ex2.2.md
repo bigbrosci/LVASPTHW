@@ -1,11 +1,11 @@
 # Ex2.2 INCAR的准备
 
 这一节，我们主要通过VASP官网中O原子的计算实例，来学习INCAR的文件准备工作。记住前面我们说的话，INCAR是纯文本。Windows用户，不要用记事本或者写字板打开。推荐使用[Notepad++](https://notepad-plus-plus.org/)。进行本节练习的时候，也要参考一下VASP官网的链接：
-
 1） https://www.vasp.at/tutorials/latest/molecules/part1/
 
 2） https://www.vasp.at/wiki/index.php/O_atom
 
+还有一个非常关键的就是`Linux 中常用的一些命令`，因为在后面的几个章节中，除了使用文本编辑器之外，还有一些Linux的命令操作，也就是在`Terminal`中敲的命令。如果不熟悉，可以先跳到`Ex2.8`这一章节练习下，再学习本节的内容。
 
 ### 简单说明
 
