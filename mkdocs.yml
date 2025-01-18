@@ -1,4 +1,4 @@
-site_name: LVASPTHW (3rd is COMING)
+site_name: LVASPTHW (3rd is OTW)
 theme:
     name: readthedocs
 site_url: http://www.bigbrosci.cn
@@ -16,7 +16,8 @@ nav:
         - Ex1.5 磨剑:        LVASPTHW/Ex1.5.md
         - Ex1.6 磨刀:        LVASPTHW/Ex1.6.md   
         - Ex1.7 Python IDE:  LVASPTHW/Ex1.7.md   
-        - Ex1.8 Vasp的编译:  LVASPTHW/Ex1.8.md
+        - Ex1.8 基本的Linux命令:  LVASPTHW/Ex1.8.md
+        - Ex1.9 Vasp的编译:  LVASPTHW/Ex1.9.md
       - Chapter 2 VASP的输入:
         - Ex2.1 基本的概念:       LVASPTHW/Ex2.1.md
         - Ex2.2 INCAR的介绍:      LVASPTHW/Ex2.2.md
@@ -25,29 +26,59 @@ nav:
         - Ex2.5 POTCAR的介绍:     LVASPTHW/Ex2.5.md
         - Ex2.6 POTCAR的制备:     LVASPTHW/Ex2.6.md
         - Ex2.7 输入文件检查:     LVASPTHW/Ex2.7.md
-        - Ex2.8 基本的Linux命令:  LVASPTHW/Ex2.8.md
-        - Ex2.9 连接服务器:       LVASPTHW/Ex2.9.md
-        - Ex2.10 VASP任务的提交:   LVASPTHW/Ex2.10.md
+        - Ex2.8 连接服务器:       LVASPTHW/Ex2.8.md
+        - Ex2.9 VASP任务的提交:   LVASPTHW/Ex2.9.md
       - Chapter 3 VASP的输出:
         - Ex3.1 基本的概念:    LVASPTHW/Ex3.1.md
-        - Ex3.2 CONTCAR:       LVASPTHW/Ex3.2.md
+        - Ex3.2 CONTCAR,XDATCAR:       LVASPTHW/Ex3.2.md
         - Ex3.3 OSZICAR:       LVASPTHW/Ex3.3.md
         - Ex3.4 OUTCAR:        LVASPTHW/Ex3.4.md
-        - Ex3.5 DOSCAR:        LVASPTHW/Ex3.5.md
-        - Ex3.6 PROCAR:        LVASPTHW/Ex3.6.md
-        - Ex3.7 XDATCAR:       LVASPTHW/Ex3.7.md
-        - Ex3.8 CHG,CHGCAR:    LVASPTHW/Ex3.8.md
-        - Ex3.9 WAVECAR:       LVASPTHW/Ex3.9.md
-        - Ex3.10 vasprun.xml:  LVASPTHW/Ex3.10.md
+        - Ex3.5 DOSCAR,PROCAR: LVASPTHW/Ex3.5.md
+        - Ex3.6 vasprun.xml:  LVASPTHW/Ex3.10.md
+        - Ex3.7 BIGCAR:    LVASPTHW/Ex3.8.md
+      - Chapter 4 VASP任务的处理:
         - Ex3.11 判断计算结束: LVASPTHW/Ex3.11.md
         - Ex3.12 检查计算结果: LVASPTHW/Ex3.12.md
-      - Chapter 4 VASP任务的批量处理:
         - Ex4.1 Linux下的批量处理:    LVASPTHW/Ex4.1.md
         - Ex4.2 for + sed:            LVASPTHW/Ex4.2.md
         - Ex4.3 for + sed + KPOINTS:  LVASPTHW/Ex4.3.md
         - Ex4.4 for + sed + POSCAR:   LVASPTHW/Ex4.4.md
         - Ex4.5 VASP任务的批量提交-1: LVASPTHW/Ex4.5.md
         - Ex4.6 VASP任务的批量提交-2: LVASPTHW/Ex4.6.md
+      - Chapter 5 气相体系的计算:
+        - Ex5.1 单原子:    LVASPTHW/ExN.md
+        - Ex5.2 双原子:    LVASPTHW/ExN.md
+        - Ex5.3 三原子:    LVASPTHW/ExN.md
+        - Ex5.4 多原子:    LVASPTHW/ExN.md
+        - Ex5.5 热力学:    LVASPTHW/ExN.md
+      - Chapter 6 体相体系的计算:
+        - Ex6.1 Bulk的搭建:    LVASPTHW/ExN.md
+        - Ex6.2 Bulk的优化:    LVASPTHW/ExN.md
+        - Ex6.3 热力学:        LVASPTHW/ExN.md
+      - Chapter 7 表面体系的计算:
+        - Ex7.1 slab模型:    LVASPTHW/ExN.md
+        - Ex7.9 热力学:      LVASPTHW/ExN.md
+      - Chapter 8 建模进阶:
+        - Ex8.1 建模软件:    LVASPTHW/ExN.md
+        - Ex8.2 建模思路:    LVASPTHW/ExN.md
+      - Chapter 9 VASP的特殊版本以及后处理程序:
+        - Ex9.1 VTST:       LVASPTHW/ExN.md
+        - Ex9.2 VASPsol++:  LVASPTHW/ExN.md
+        - Ex9.3 CP-VASP:    LVASPTHW/ExN.md
+        - Ex9.4 Z_fixed:    LVASPTHW/ExN.md
+        - Ex9.5 Py4vasp:    LVASPTHW/ExN.md
+        - Ex9.6 ASE:        LVASPTHW/ExN.md
+        - Ex9.7 Pymatgen:   LVASPTHW/ExN.md
+        - Ex9.8 Phonopy:    LVASPTHW/ExN.md
+        - Ex9.9 Homemade:   LVASPTHW/ExN.md
+      - Chapter 10 Trouble Shooting: 
+        - Ex10.1 思路:       LVASPTHW/ExN.md
+        - Ex10.9 ChatGpt:    LVASPTHW/ExN.md
+      - Chapter 11 Misc Information: 
+        - Ex11.1 数据库:       LVASPTHW/ExN.md
+        - Ex11.2 超算中心:     LVASPTHW/ExN.md
+        - Ex11.3 替代软件:     LVASPTHW/ExN.md
+        - Ex11.4 推荐书:       LVASPTHW/ExN.md
     - 硕/博/后/研位置:
         - 工作位置分享指南:      JOBS/job_intro.md   
         - 大湾区大学刘天辉课题组:   JOBS/job_2024_12_09.md

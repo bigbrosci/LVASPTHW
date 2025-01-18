@@ -1,251 +1,110 @@
-### Ex2.8 基本的Linux命令
+# Ex2.9 连接服务器
 
-前面几节大家已经学习了怎么`亲自手动`制作文本格式的输入文件。回顾一下我们所学的东西：
+前面我们练习了使用Linux各种命令对输入文件进行修改，也准备好了众多的测试任务。
 
-* VASP必须有的输入文件都有哪些？  INCAR、KPOINTS、POSCAR、POTCAR
+1） INCAR中SIGMA的测试；
 
-* 这些文件用什么编辑器修改或者制作？
-* 文本内部格式都有哪些需要的注意事项？
-* 目前学到的INCAR中各个参数代表的含义？
-* KPOINTS， POSCAR文本中每一行所代表的含义？
-* POTCAR中几个参数的含义？
+2） KPOINTS的测试；
 
-当我们准备好输入文件后，下一步就是在服务器里面提交任务，运行VASP了。在这之前，很有必要给大家介绍一些常用的Linux命令，也就是大家今后在终端（Terminal）经常敲的命令。
+3）POSCAR格子大小的测试。
 
-####  Linux里面的一些基本命令
+但是怎么计算呢？我们先理一理实现计算的几个条件：
 
-首先：教给大家常用的进入目录，查看目录下文件（夹），查看文件内部信息的几个相关的命令: `cd`, `ls`，`  cat`，和  `grep`。 通过这几个命令，复习并查看上一节我们制作的输入文件: INCAR， KPOINTS， POSCAR 和POTCAR。
+1） 有服务器；
 
-大师兄在超算中心的一些具体的基本操作。大家可以照着命令自己练习下面的几个命令。先敲一遍，看下输出结果。（老司机自动跳过）
+2）服务器上安装了VASP；
 
-```bash
-qli@bigbrosci ~ % cd ~/Desktop/LVASPTHW/Ex01/     
-qli@bigbrosci Ex01 % ls
-INCAR    KPOINTS  POSCAR   POTCAR
-qli@bigbrosci Ex01 % pwd
-/Users/qli/Desktop/LVASPTHW/Ex01
-qli@bigbrosci Ex01 % cat INCAR 
-SYSTEM = O atom 
-ISMEAR = 0       
-SIGMA = 0.01      
-qli@bigbrosci Ex01 % grep TIT POTCAR 
-   TITEL  = PAW_PBE O 08Apr2002
-qli@bigbrosci Ex01 % grep ENMAX POTCAR 
-   ENMAX  =  400.000; ENMIN  =  300.000 eV
-```
+3）连接到服务器；
 
-**详解:** 
+4）把准备好的输入文件上传到服务器（当然也可以直接在服务器上操作）；
 
-1）`cd`： 进入文件夹所在的目录；
+5）提交任务到服务器。
 
-2）`ls` ：列出来当前目录下的所有文件和文件夹；
+**第一个条件**我们默认大家已经满足，如果不满足，VASP可以学到此为止了。**第二个条件**就是VASP的安装，默认大家已经按照，如果有自己的服务器，或者租赁的超算，可以参看本书VASP的安装这一章节。安装过程中一些连接服务器，上传文件的操作，可以参考本节。今天我们介绍第三个条件：**服务器的连接。**
 
-3） `pwd`：显示当前所在的绝对目录。
 
-4） `cat` 后面加上文件名，就可以在输出里面查看该文件的内容：cat 和文件名之间有空格， 可以是一个，也可以是N个。（上一节，我们也使用cat命令来生成VASP的POTCAR）
 
-5） 对于一个大文件来说，里面有很多行， 用`cat`就不方便查看了， 我们可以用`grep`这个命令提取出来所关心的信息，比如上一节的`POTCAR`文件，复习下上节的操作：
+### 连接服务器的工具：
 
-* 例子1：我们想知道`POTCAR`中包含的元素，可以用: `grep TIT POTCAR` ， 
+1) 通过软件：主要指的是Windows系统，选择花样很多，比如：Winscp+Putty；Mobaxterm；XManager。大家自行百度，寻找一款适合自己装逼的软件。困难选择症患者直接使用Mobaxterm。主要目的就是：连接到服务器并且实现数据互传。也就是上传文件（前面准备的输入文件）到服务器，或者下载（计算结果等）到本地电脑。
+2) 通过终端，
+   1) Windows系统：
+      * WSL(适用于Linux的Windows子系统)。WSL目前最新的是WSL2。安装Ubuntu的时候要注意，尽可能安装最新的。这个百度或者google都会有一堆的教程。Ubuntu官网也有对应的教程：[Install Ubuntu on WSL2 on Windows 10](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10) ；很详细照着做就行了。
+      * Windows自己也出了一个Terminal。Win10或者11用户，在商店直接搜索关键词：`Windows Terminal`。既可以打开Powershell，也可以打开WSL的Ubuntu。
+   2) Ubuntu和MacOs：直接打开terminal即可。
 
-TIT就是POTCAR中的一个固定的字符，通过提取这个字符，获取我们需要的结果，这里我们知道了 POTCAR中含有O元素;
+3. Ipad连接服务器的软件：
 
-* 例子2：通过使用：`grep ENMAX POTCAR`  可以获取POTCAR中O元素的截断能是400 eV;
+   * SSHaking
+   * Terminus （Android平板也可以）
+   * juiceSSH  （Android平板也可以）
 
-* **注意：**`grep` 后面提取的字符，最好在文件中是唯一存在的或者只出现几次。否则我们不容易得到期望的结果; 大家可以运行下面这两个命令，感受下结果;
+   
+
+#### Terminal 连接的命令
+
+Terminal中，主要通过ssh （**Secure Shell Protocol**）进行连接：主要命令行为：
 
 ```bash
-grep EMAX POTCAR
-grep  PBE POTCAR  
-grep  0  POTCAR  （可以是0，也可以是字母O）
+ssh qli@cluster.hpc.udel.edu -X 
 ```
 
-6） 查看文件的命令还有 `more`，例如下面的操作：
+`ssh `连接服务器的命令，后面跟着用户名以及服务器的域名。 -X 或者 -Y 主要是用于在服务器上运行可视化界面。国内比较流行VPN，也就是先连接VPN后，再运行上面的ssh命令行。具体以超算或者自己课题组的为准。
+
+
+
+#### 数据传输
+
+除了前面介绍的几款软件外，还有一些非常方便的办法。我们几乎每个人手上都会有U盘或者移动硬盘，下面介绍的方法就类似我们把移动硬盘插到电脑上，进行数据互传一样。唯一的区别在于此时的移动硬盘使我们的服务器集群。
+
+##### Windows
+
+* Windows的WSL2下的Ubuntu可以按照后面Ubuntu的操作进行。
+* Windows还可以通过**映射网络驱动器**把服务器挂载到本地电脑。映射前需要先安装：sshfs-win （https://github.com/winfsp/sshfs-win）和winfsp （https://winfsp.dev/rel/）。挂载完成后，则可以在Terminal中通过一些常用的命令实现文件在本地电脑和服务器之间的传输；
+* Windows用户还可以通过sftp进行数据传输。
+
+##### Ubuntu
+
+则通过使用`sshfs`将服务器挂载到本地电脑，从而在`Terminal`中实现数据传输的命令行操作。`sshfs`的下载则通过命令行进行：
+
+```
+sudo apt-get update
+sudo apt-get install sshfs
+```
+
+下载完成后：
+
+（1）创建挂载的目录：也就是建一个文件夹： `mkdir ~/cluster `
+
+（2）将下面几行复制到`~/.bashrc` 文件中，MacOs则是`~/.bash_profile`文件，将`qli@cluster.edu` 改成你自己服务器登录的用户名和域名。
 
 ```bash
-qli@bigbrosci Ex01 % ls
-INCAR  KPOINTS  POSCAR  POTCAR 
-qli@bigbrosci Ex01 % more  INCAR  
-SYSTEM = O atom 
-ISMEAR = 0       
-SIGMA = 0.01      
-qli@bigbrosci Ex01 % more POSCAR  
-O atom in a box 
-1.0            
-8.0 0.0 0.0   
-0.0 8.0 0.0  
-0.0 0.0 8.0 
-O          
-1         
-Cartesian
-0.0 0.0 0.0   
-qli@bigbrosci Ex01 %
+alias cluster='ssh -Y  qli@cluster.edu'
+alias mcluster='sshfs qli@cluster.edu: ~/cluster'
+alias ucluster='sudo umount ~/cluster -l'
 ```
 
-7） 或者less， 运行less  命令 后，会弹出类似VIM的界面，并显示文件的内容，
+（3）更新下`~/.bashrc`或者`~/.bash_profile`，：命令
 
 ```bash
-qli@bigbrosci Ex01 % less INCAR
+. ~/.bashrc
 ```
 
-* 如果要退出，敲一下 q 键即可;
+ `.` 在这里就是更新的意思，还可以用source命令: ` source ~/.bashrc`
 
-* 如果想编辑文件，再敲一下键盘上的v键，则可以直接进入vim 的编辑界面。退出时和vim的退出方法是一样的。
+（4）前面设置完成后，
 
-上一小节，我们学习了一些基本的与输入文件相关的linux操作，今天我们学习下文件以及文件夹的操作命令：`mkdir`,`touch`, `cp`，`mv`。跟Gaussian不一样，VASP的计算是以文件夹为单位的，也就是一个文件夹里面包含有一个计算任务。2个计算任务，则对应的是2个文件夹。那么可不可以都放在一个文件夹里面呢？ 可以，但没人这样做，会死的很惨。本节大家熟悉下在终端里创建文件夹，复制，重命名的过程，对应着Windows中鼠标右键，创建新文件夹，鼠标选中，`Control + C`,`Control + V`等操作。
+	* 登录服务器的时候敲命令：`cluster`; 
+	* 将服务器挂载到本地电脑的命令：`mcluster`；
 
-### mkdir 
+* 将服务器从本地电脑移除（类似拔掉U盘）的命令：`ucluster`
 
-`mkdir` 是创建文件夹的命令，后面跟着你要创建的文件夹的名字。（`mkdir` 和文件夹名字中间有空格）`mkdir`的使用有很多窍门。大家可以google或者百度关键词查找： mkdir 窍门，小诀窍 等等。下面我们创建一个名为Ex02的文件夹，创建Ex03并同时在该文件夹中创建另一个文件夹`bigbro`。  (`mkdir -p`)
+##### MacOs
 
-```
-qli@bigbrosci ~ % cd Desktop/LVASPTHW 
-qli@bigbrosci LVASPTHW % ls
-Ex01/
-qli@bigbrosci LVASPTHW % mkdir Ex02 
-qli@bigbrosci LVASPTHW % mkdir -p Ex03/bigbro 
-qli@bigbrosci LVASPTHW % ls
-Ex01/ Ex02/ Ex03/
-qli@bigbrosci LVASPTHW % ls *
-Ex01:
-INCAR    KPOINTS  POSCAR   POTCAR
-
-Ex02:
-
-Ex03:
-bigbro/
-qli@bigbrosci LVASPTHW % rm -fr Ex02 Ex03 
-qli@bigbrosci LVASPTHW % ls
-Ex01/
-
-```
+主要通过使用`macFUSE`，`SSHFS`进行，这两个软件的下载链接：https://osxfuse.github.io。下载后双击安装，剩下的具体设置和Ubuntu一样。唯一的区别就是把`~/.bashrc`文件换成了`~/.bash_profile`,但是里面修改的内容是一样的。
 
 
 
-### cp 和 mv
+#### 总结
 
-`cp`这个命令适用于文件以及文件夹的复制（`copy`），重命名或者移动文件（夹）的话，则用`mv`命令。比如：
-
-2.1） 将文件夹bigbro 复制为: bigbra
-
-```
-qli@bigbrosci LVASPTHW % ls
-Ex01/
-qli@bigbrosci LVASPTHW % mkdir bigbro 
-qli@bigbrosci LVASPTHW % ls
-Ex01/   bigbro/
-qli@bigbrosci LVASPTHW % cp bigbro bigbra 
-qli@bigbrosci LVASPTHW % ls
-Ex01/   bigbra/ bigbro/
-```
-
-* 如果复制文件夹的时候，如出现`cp: omitting directory`这个错误，在cp命令后，或者前面命令的结尾加上`-r`即可。复制文件的时候，不用加 -r。
-
-```bash
-cp -r  bigbro bigbra
-cp bigbro bigbra -r
-```
-
-* 大师兄这里之所以没有加`-r`,是因为在`~/.bashrc` (Linux)或者`~/.bash_profile`(Mac OS)文件中设置了默认`-r`。
-
-```bash
-qli@bigbrosci LVASPTHW % grep cp ~/.bash_profile
-alias cp='cp -r'
-```
-
-2.2） 将文件夹bigbro 重命名为：bigbro_1
-
-```
-qli@bigbrosci LVASPTHW % mv bigbro bigbro_1
-qli@bigbrosci LVASPTHW % ls
-Ex01/     bigbra/   bigbro_1/
-```
-
-2.3） 将文件夹bigbro_1移动到：bigbra
-
-```
-qli@bigbrosci LVASPTHW % mv bigbro_1 bigbra 
-qli@bigbrosci LVASPTHW % ls
-Ex01/     bigbra/
-qli@bigbrosci LVASPTHW % ls *
-Ex01:
-INCAR    KPOINTS  POSCAR   POTCAR
-
-bigbra:
-bigbro_1/
-```
-
-2.4）将Ex01中的内容复制到当前目录。`当前目录`在linux命令中，用`.`表示。
-
-```
-qli@bigbrosci LVASPTHW LVASPTHW % ls
-Ex01/   bigbra/
-qli@bigbrosci LVASPTHW LVASPTHW % ls Ex01      
-INCAR    KPOINTS  POSCAR   POTCAR
-qli@bigbrosci LVASPTHW LVASPTHW % cp Ex01/* . 
-qli@bigbrosci LVASPTHW LVASPTHW % ls
-Ex01/    INCAR    KPOINTS  POSCAR   POTCAR   bigbra/
-qli@bigbrosci LVASPTHW LVASPTHW % 
-```
-
-2.5） 将Ex01中的四个输入文件复制到bigbra这个文件夹中：
-
-```
-qli@bigbrosci LVASPTHW LVASPTHW % cp Ex01/* bigbra 
-qli@bigbrosci LVASPTHW LVASPTHW % ls * 
-Ex01:
-INCAR    KPOINTS  POSCAR   POTCAR
-
-bigbra:
-INCAR     KPOINTS   POSCAR    POTCAR    bigbro_1/
-
-```
-
-* 学会用tab键来自动补全提高自己在终端输入的速度，更多窍门，百度搜索`linux tab键`
-
-```bash
-qli@bigbrosci LVASPTHW LVASPTHW % cp E
-```
-
-摁tab键
-
-```bash
-qli@bigbrosci LVASPTHW LVASPTHW % cp Ex01/
-```
-
-* `*`代表某个目录下所有的内容。
-
-
-
-**思考下：**
-
-对于一个文件A，我们的目的是将A重命名为B。有下面2种操作可供选择：
-
-第一种） mv A B 
-
-第二种） cp A B 然后 rm A 
-
-从结果上来说，这两种做法都是可以的。这里大师兄想告诉你的是：
-
-i） 尽量找最简单的方法（第一种）实现所期望的目的；
-
-ii） 如果不知道最简单的方法， 那么可以尝试其他方式来解决（第二种）。
-
-
-
-
-
-### 总结
-
-本节的内容虽名为详解，实为简介！如果想学的更加深入还要靠自己百度或者google查找相关的Linux命令学习手册，ppt等（关键词：`Linux 常用命令 技巧`），平时多加操练。但千万不要让我推荐参考书给你。到现在，我们讲到的Linux基本命令有： `ls`，`cd`，`pwd`，`cat`，`grep`，`more`，`less` 以及`vim` 这个编辑器。如何才能圆满达到本节的要求呢？
-
-1） 熟练操作使用这些命令；
-
-2） 搜索并尝试一些教程相关的学习；
-
-3） 养成遇到不会的命令，就自己**主动**认真搜索学习的习惯。
-
-
-
-通过本小节的学习：一方面我们熟悉文件（夹）创建，复制，移动，以及重命名的linux命令：mkdir， mv， cp，以及一些特殊的字符比如`*`和 `.`。此外， linux的命令操作有很多的小技巧，大家**一定一定一定**要多多去网上搜集，加以练习，这对于提高工作效率非常有帮助。 熟悉使用这几个命令，能跟Windows的鼠标操作对应起来，本节任务就完成了。当然喽，跟拍照一样，现在越来越多的公司把计算做的越来越傻瓜化，鼠标点点就完事。如果你想要这样的教程，本书后面的内容也可以不看了。
-
+本节主要介绍了以下不同操作系统中服务器的连接方法以及数据互传的一些软件以及Terminal中的相关设置。文章看起来很简单，但真正操作起来，可能会出现各种各样的小问题，如果能在2天之内解决服务器的连接，实现数据的互传。就圆满完成了任务。
