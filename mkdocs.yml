@@ -4,8 +4,8 @@ theme:
 site_url: http://www.bigbrosci.cn
 
 nav:
+    - 通知: index.md
     - 前言: Introduction.md
-    - 紧急通知: index.md
     - 序言: 序言.md
     - LVASPTHW:
       - Chapter 1 学习的基本要求:
