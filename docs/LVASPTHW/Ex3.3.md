@@ -8,7 +8,8 @@
 
 师兄，`OSZICAR`是什么的缩写？为什么起这么一个名字？
 
-不好意思，这个我真不知道。也没有认真去考证过。目前只能告诉大家先把这个名字记住。
+OSZICAR 文件是输出文件之一，记录了电子自洽迭代过程（SCF，即 Self-Consistent Field）和离子步（ionic steps）中的能量变化信息，其文件名来自 "OSZI"（表示震荡，来自德语 "oszillieren"）和 "CAR"（表示卡片/记录） 的组合。
+
 
 ### 什么是优化？
 
@@ -19,13 +20,15 @@
 * **电子结构**的优化： 可以理解为对某一固定的几何结构，迭代求解薛定谔方程来获得体系能量极小值的一个过程。这个迭代过程，每一次迭代求解都可以认为是电子结构的一个优化。（通常被大伙称为：电子步）
 * **几何结构**的优化：可以理解为在电子结构优化的结果上，获取原子的受力情况，然后根据受力情况，调节原子的位置，再进行电子结构优化，获取新的受力情况，然后再调节原子位置，一直重复这样的过程，直至找到体系势能面上一个极小值的过程。（通常被大伙称为：离子步）
 
-思考一下，我们的`O`原子体系，我们只可能对它进行电子结构的优化，因为它的几何结构不会发生变化。
+![双原子分子体系的势能图](figs/ex3.3_1.png)
+
+思考一下，我们当前学习的`O`原子体系，我们只可能对它进行电子结构的优化，因为它的几何结构不会发生变化。
 
 ### `OSZICAR`是干什么的？
 
 当VASP迭代求解`O`原子电子结构的时候，整个过程就会记录在OSZICAR中。下面我们就看一下VASP官网对`OSZICAR`的解释说明：https://www.vasp.at/wiki/index.php/OSZICAR
 
-```fortran
+```
 Information about convergence speed and about the current step is written to stdout and to the **OSZICAR** file. Always keep a copy of the **OSZICAR** file, it might give important information.
 ```
 
@@ -35,7 +38,7 @@ Information about convergence speed and about the current step is written to std
 
 在Linux的终端中，使用Vim打开`OSZICAR`（不会Vim，就把文件下载到本地电脑，用文本编辑器打开），会看到类似下面的信息：
 
-```fortran
+```bash
        N       E                     dE             d eps       ncg     rms          rms（c）
 DAV:   1     0.324969965196E+02    0.32497E+02   -0.10270E+03    48   0.977E+01
 DAV:   2     0.501749892771E+00   -0.31995E+02   -0.31995E+02    72   0.202E+01
@@ -49,19 +52,19 @@ DAV:   7    -0.214708381542E-01   -0.98222E-04   -0.23522E-04    48   0.459E-02
 
 * 第一行中各项的含义：（没汉语解释的，大师兄也翻译不出来）
 
-  1） `N` 代表电子结构的迭代步数，通常被大家称为电子步。
+  1） `N` 代表电子结构的迭代步数，通常被大家称为电子步, SCF 迭代步数；
 
-  2） `E` 代表当前电子步的体系能量;
+  2） `E` 代表当前电子步的体系能量 (不包括零点震动能);
 
-  3） `dE`当前电子步和上一步体系能量的差值;
+  3） `dE`当前电子步和上一步的能量差值;
 
-  4） `d eps` the change in the band structure energy; 
+  4） `d eps` 本次迭代中能带占据数变化的估计误差（电子密度收敛指标）; 
 
-  5）`ncg` the number of evaluations of the Hamiltonian acting onto a wavefunction; 
+  5）`ncg`: number of conjugate gradient。 共轭梯度（conjugate gradient）循环次数（解 Kohn-Sham 方程的内部迭代数)；
 
-  6） `rms`  the norm of the residuum of the trialwavefunctions （i.e. their approximate error）
+  6） `rms`: 所有电荷密度网格点上的均方根误差（RMS error），表示密度收敛程度 
 
-  7） `rms (c)` the difference between input and output charge density.
+  7） `rms (c)`: 输入和输出电荷密度之间的差异
 
 * 第二行中`DAV`的含义：
 
@@ -72,7 +75,7 @@ DAV:   7    -0.214708381542E-01   -0.98222E-04   -0.23522E-04    48   0.459E-02
   3） 前面我们说了，要找一个适合自己体系的算法，是选`DAV`，`RMM`还是`CG`，亦或是其他的呢？ 这个可以在`INCAR`中通过参数`ALGO`设置，参考链接：https://www.vasp.at/wiki/index.php/ALGO 。一般来说，使用`ALGO = Fast`可以满足大部分的需求。可以理解为北京到南京出行，大家最常用的火车。有一点要记住，如果在后面课题开展过程中，遇到电子结构很难收敛的情况要这么做：
 
   * 检查几何结构是否合理？不合理的几何结构导致离子步难收敛
-  * 如果合理，可能是体系本身的电子结构比较复杂，这时候就需要换一些更加稳定可靠的算法了，比如`ALGO = ALL`。越稳定对应的也就是计算的时间或者消耗的计算资源越多。鱼和熊掌不可兼得。
+  * 如果合理，可能是体系本身的电子结构比较复杂，这时候就需要换一些更加稳定可靠的算法了，比如`ALGO = ALL`。需要特别注意的是：越稳定对应的也就是计算的时间或者消耗的计算资源越多，有时候会超出你的预算，鱼和熊掌不可兼得。
 
   4） 师兄：这个氧原子的计算中，我们没有在`INCAR`中设置`DAV`这个算法相关的参数啊，为什么`OSZICAR`中还会出现`DAV`呢？
 
@@ -91,6 +94,8 @@ DAV:   7    -0.214708381542E-01   -0.98222E-04   -0.23522E-04    48   0.459E-02
   2） `F =` 是体系的总能量, 与`OUTCAR`中 `free energy  TOTEN` 后面的值相等；（`OUTCAR`还没讲，暂且记住）
 
   3） `E0` 后面的能量对应`OUTCAR`中 `energy (sigma->0)`后面的能量。
+
+  4)  如果看了一头雾水，只要记住这一点就可以了： E0 后面的能量就是你所需要的数值，这是最关键的信息之一，其他的可以都忽略掉。
   
   
 
@@ -98,12 +103,12 @@ DAV:   7    -0.214708381542E-01   -0.98222E-04   -0.23522E-04    48   0.459E-02
 
 Always keep a copy of the OSZICAR file, it might give important information. 官网既然这么说，这表明OSZICAR确实很重要，重要在哪里呢？ 
 
-* 整个体系的优化过程都记录下来了。（当然后面我们要讲的`OUTCAR`也以更加详细的方式将优化过程记下来了）但`OSZICAR`可以更加直观地观测我们体系优化过程中能量的变化过程。
+* 整个体系的电子优化过程都记录下来了（当然结构信息没有在这里保存）。（当然后面我们要讲的`OUTCAR`也以更加详细的方式将优化过程记下来了）但`OSZICAR`可以更加直观地观测我们体系优化过程中能量的变化过程。
 
 * 通过`OSZICAR`获取体系的能量，也就是`E0`后面的那一项。**很多人在使用`VASP`的时候，不知道该选择哪个能量**，这里大师兄就告诉你：选择`E0`后面的即可。不管你有什么疑问，不管别人怎么跟你争论，都不要管，先老老实实记住：我们选`E0`后面的这个能量。随着你的学习，很多疑问自己就解开了。命令使用方式：
 
   ```
-  iciq-lq@ln3:/THFS/home/iciq-lq/LVASPTHW/ex05$ grep E0 OSZICAR  
+  qli@bigbrosci:~/LVASPTHW/ex3.3$ grep E0 OSZICAR  
      1 F= -.21470838E-01 E0= -.13757722E-01  d E =-.154262E-01
   ```
 
@@ -121,4 +126,4 @@ Always keep a copy of the OSZICAR file, it might give important information. 官
 
 5）保持`INCAR`干净整洁，不知道的，模糊不清的参数坚决不往`INCAR`里面写，乱七八糟的注释，能不写就不要放。
 
-6）知道怎么从`OSZICAR`中获取体系的能量。
+6）知道怎么从`OSZICAR`中获取体系的能量: 'E0' 后面的能量。记住第6条并且会写一个脚本去提取这个能量，本节就完成任务。
