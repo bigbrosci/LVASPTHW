@@ -1,15 +1,15 @@
 # Ex3.2 VASP的输出文件 CONTCAR
 
-上一节，我们介绍了VASP任务的的提交，不出意外，会看到一堆的输出文件。由于大家还处在一个刚刚接触VASP的阶段。我们先根据目前的计算，挑容易的，重要的进行介绍。本节我们从最简单的输出文件`CONTCAR`开始，一步一步介绍VASP的主要的输出文件。
-
+上一节我们介绍了VASP的输出文件包括几何和电子结构这两个方面，我们先根据目前的计算，挑最简单容易的，重要的一个几何结构输出文件进行介绍。
+它就是`CONTCAR`。为什么说最容易呢，因为它跟POSCAR长的几乎一模一样，我们前面学习了POSCAR,打开CONTCAR就发现也就这么一回事儿，没什么难度。
 
 
 ### `CONTCAR` 和 `POSCAR`的区别
 
-在VASP的输入文件中，我们用`POSCAR`来存储模型的结构信息。当VASP优化任何结束后，就会得到一个新的结构，而`CONTCAR`就是用来存储新结构的文件。当然啦，我们这里只有一个O原子，不存在优化这一说法，但VASP任务只要运行，就会有CONTCAR出现，不优化的的结果就是：`CONTCAR`和`POSCAR`的结构是一模一样的。但`CONTCAR`和`POSCAR`里面的内容可以一样，也可以不一样。在这里，大师兄把自己的个人经验都写在里面，新手看不懂的话不要紧，先记住这里有`CONTCAR`的相关注意信息，以后用的时候过来直接看即可。如下：
+在VASP的输入文件中，我们用`POSCAR`来存储模型的结构信息。当VASP优化任何结束后，就会得到一个新的结构，而`CONTCAR`就是用来存储新结构的文件。当然啦，我们这里只有一个O原子，不存在优化这一说法，但VASP任务只要运行，就会有CONTCAR出现，VASP不优化的的结果就是：`CONTCAR`和`POSCAR`所描述的模型是一模一样的。但`CONTCAR`和`POSCAR`里面的内容可以一样，也可以不一样。在这里，大师兄把自己的个人经验都写在里面，新手看不懂的话不要紧，先记住这里有`CONTCAR`的相关注意信息，以后用的时候过来直接看即可。如下：
 
 ```bash
-iciq-lq@ln3:/THFS/home/iciq-lq/LVASPTHW/ex05$ cat -n POSCAR 
+qli@bigbrosci:~/LVASPTHW/ex05$ cat -n POSCAR 
      1	O atom in a box 
      2	1.0            
      3	8.0 0.0 0.0   
@@ -19,7 +19,7 @@ iciq-lq@ln3:/THFS/home/iciq-lq/LVASPTHW/ex05$ cat -n POSCAR
      7	1         
      8	Cartesian
      9	0 0 0           #
-iciq-lq@ln3:/THFS/home/iciq-lq/LVASPTHW/ex05$ cat -n CONTCAR 
+qli@bigbrosci:~/LVASPTHW/ex05$ cat -n CONTCAR 
      1	O atom in a box                         
      2	   1.00000000000000     
      3	     8.0000000000000000    0.0000000000000000    0.0000000000000000
@@ -105,25 +105,25 @@ II）如果前面检查的结构没问题，这种情况，可能是因为
 那么我们就需要继续算了。此时，为了保证计算的可重复性，我们必须要将上一步的计算保存记录下来。比如下面，大师兄本人的一个过渡态的优化：
 
 ```
-qli@tekla2:~/test$ ls
+qli@bigbrosci:~/test$ ls
 CONTCAR    DOSCAR    EIGENVAL  INCAR    OSZICAR    OSZICAR-2  OUTCAR    OUTCAR-2  PCDAT   POSCAR-1  POSCAR-3  REPORT  sub16  vasprun.xml
 CONTCAR-1  DOSCAR-1  IBZKPT    KPOINTS  OSZICAR-1  OSZICAR-3  OUTCAR-1  OUTCAR-3  POSCAR  POSCAR-2  POTCAR    sub12   sub28
-qli@tekla2:~/test$ grep NSW INCAR
+qli@bigbrosci:~/test$ grep NSW INCAR
 NSW = 800
-qli@tekla2:~/test$ tail OSZICAR -n 3 
+qli@bigbrosci:~/test$ tail OSZICAR -n 3 
 RMM:   8    -0.339073663363E+03    0.17227E-04   -0.45367E-05  3703   0.126E-02    0.104E-02
 RMM:   9    -0.339073663179E+03    0.18447E-06   -0.78164E-06  2696   0.541E-03
  800 F= -.34272018E+03 E0= -.34270858E+03  d E =0.159932E-02
-qli@tekla2:~/test$ ls
+qli@bigbrosci:~/test$ ls
 CONTCAR    DOSCAR    EIGENVAL  INCAR    OSZICAR    OSZICAR-2  OUTCAR    OUTCAR-2  PCDAT   POSCAR-1  POSCAR-3  REPORT  sub16  vasprun.xml
 CONTCAR-1  DOSCAR-1  IBZKPT    KPOINTS  OSZICAR-1  OSZICAR-3  OUTCAR-1  OUTCAR-3  POSCAR  POSCAR-2  POTCAR    sub12   sub28
-qli@tekla2:~/test$ save_calculations.sh 4
-qli@tekla2:~/$ ls
+qli@bigbrosci:~/test$ save_calculations.sh 4
+qli@bigbrosci:~/$ ls
 CONTCAR-1  DOSCAR-1  IBZKPT  KPOINTS    OSZICAR-2  OSZICAR-4  OUTCAR-2  OUTCAR-4  POSCAR    POSCAR-2  POSCAR-4  REPORT  sub16  vasprun.xml-4
 DOSCAR     EIGENVAL  INCAR   OSZICAR-1  OSZICAR-3  OUTCAR-1   OUTCAR-3  PCDAT     POSCAR-1  POSCAR-3  POTCAR    sub12   sub28
-qli@tekla2:~/test$ vi INCAR
-qli@tekla2:~/ru_chbr/ads/high_coverage_br/1Br/ch3br/ts_c-br/test$ qsub sub12
-Your job 215093 ("freq-4B2") has been submitted
+qli@bigbrosci:~/test$ vi INCAR
+qli@bigbrosci:~/test$ qsub sub12
+Your job 215093 ("ts_opt") has been submitted
 
 ```
 
@@ -135,13 +135,12 @@ Your job 215093 ("freq-4B2") has been submitted
 * 保存之后，我们就可以提交任务继续苦苦等待了。
 
 
-
 ### 总结
 
 到这里，`CONTCAR`的基本介绍以及作用差不多就讲完了。新手们看到后可能会很困惑，因为里面很多内容是大师兄临时加进去给有经验的人写的。只要记住下面几点就圆满完成本节的学习任务：
 
 1） `CONTCAR`的作用跟`POSCAR`一样，存储的是模型结构信息
 
-2） `CONTCAR`存储的是优化过的，而且是最新一步的结构；
+2） `CONTCAR`存储的是优化过的，而且是最后一步的结构（也就是最新的）；
 
-3）任务中断了， `CONTCAR `可以用来续算。
+3）  任务中断了， `CONTCAR `可以用来续算(把CONTCAR 复制成POSCAR,记得保存记录当前终端的计算结果), 但是频率计算一旦中断就得从头开始，读CONTCAR不管用。
