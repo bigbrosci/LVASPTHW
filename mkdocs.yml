@@ -33,7 +33,7 @@ nav:
         - Ex3.2 CONTCAR,XDATCAR:       LVASPTHW/Ex3.2.md
         - Ex3.3 OSZICAR:       LVASPTHW/Ex3.3.md
         - Ex3.4 OUTCAR:        LVASPTHW/Ex3.4.md
-        - Ex3.5 DOSCAR,PROCAR: LVASPTHW/Ex3.5.md
+        - Ex3.5 DOSCAR: LVASPTHW/Ex3.5.md
         - Ex3.6 vasprun.xml:  LVASPTHW/Ex3.10.md
         - Ex3.7 BIGCAR:    LVASPTHW/Ex3.8.md
       - Chapter 4 VASP任务的处理:
