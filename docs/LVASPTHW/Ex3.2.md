@@ -144,3 +144,4 @@ Your job 215093 ("ts_opt") has been submitted
 2） `CONTCAR`存储的是优化过的，而且是最后一步的结构（也就是最新的）；
 
 3）  任务中断了， `CONTCAR `可以用来续算(把CONTCAR 复制成POSCAR,记得保存记录当前终端的计算结果), 但是频率计算一旦中断就得从头开始，读CONTCAR不管用。
+4)  VASP 中还有另外一个记录结构信息的文件：'XDATCAR'。这个在跑分子动力学的时候比较有用。感兴趣的可以看一下这个文件的结构，结合POSCAR，CONTCAR尝试着去理解每一行的含义。
