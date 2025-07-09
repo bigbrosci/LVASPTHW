@@ -10,9 +10,11 @@ Learn VASP: The Hard Way 第三版更新进度：
 
 2025_05_25: Ex3.5：DOSCAR例子中添加了学习计算的基本思路。 
 
-(1） 如果你对某一个内容感兴趣，并且很熟悉，可以联系大师兄添加到书中：微信：BigBroSci
+2025_06_02: Ex3.2：添加了XDATCAR的简单说明。 
 
-(2） 其他的章节暂时没有更新到网站，大家可以先下载教程本地浏览: 
+1） 如果你对某一个内容感兴趣，可以联系大师兄添加到书中。微信： BigBroSci
+2） 如果你对某一个计算很熟悉，可以联系大师兄把你的经验写进书中。微信：BigBroSci
+3） 其他的章节暂时没有更新到网站，大家可以先下载教程本地浏览: 
 
 LVTHW-master.zip
 链接: https://pan.baidu.com/s/18Gcbze9Z4-psMpzfdcwjng?pwd=bpsr 提取码: bpsr
