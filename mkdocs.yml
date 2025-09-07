@@ -33,9 +33,9 @@ nav:
         - Ex3.2 CONTCAR,XDATCAR:       LVASPTHW/Ex3.2.md
         - Ex3.3 OSZICAR:       LVASPTHW/Ex3.3.md
         - Ex3.4 OUTCAR:        LVASPTHW/Ex3.4.md
-        - Ex3.5 DOSCAR: LVASPTHW/Ex3.5.md
-        - Ex3.6 vasprun.xml:  LVASPTHW/Ex3.10.md
-        - Ex3.7 BIGCAR:    LVASPTHW/Ex3.8.md
+        - Ex3.5 DOSCAR:        LVASPTHW/Ex3.5.md
+        - Ex3.6 PROCAR:        LVASPTHW/Ex3.6.md
+        - Ex3.7 Charge_Cars:   LVASPTHW/Ex3.7.md
       - Chapter 4 VASP任务的处理:
         - Ex3.11 判断计算结束: LVASPTHW/Ex3.11.md
         - Ex3.12 检查计算结果: LVASPTHW/Ex3.12.md
@@ -81,3 +81,5 @@ nav:
         - Ex11.4 推荐书:       LVASPTHW/ExN.md
       - Chapter 12 实用小脚本: 
         - Ex12.1 数据压缩:    LVASPTHW/Ex12.1.md
+        - Ex12.2 Ubuntu字体安装:    LVASPTHW/Ex12.2.md
+        - Ex12.3 Latex学习:    LVASPTHW/Ex12.3.md
