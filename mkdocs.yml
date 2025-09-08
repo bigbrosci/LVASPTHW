@@ -37,7 +37,7 @@ nav:
         - Ex3.6 PROCAR:        LVASPTHW/Ex3.6.md
         - Ex3.7 Charge_Cars:   LVASPTHW/Ex3.7.md
         - Ex3.8 WAVECAR:       LVASPTHW/Ex3.8.md
-        - Ex3.8 ERROR_Cars:    LVASPTHW/Ex3.9.md
+        - Ex3.9 ERROR_Cars:    LVASPTHW/Ex3.9.md
       - Chapter 4 VASP任务的处理:
         - Ex3.11 判断计算结束: LVASPTHW/Ex3.11.md
         - Ex3.12 检查计算结果: LVASPTHW/Ex3.12.md
