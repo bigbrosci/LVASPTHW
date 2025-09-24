@@ -76,11 +76,14 @@ nav:
       - Chapter 10 Trouble Shooting: 
         - Ex10.1 思路:       LVASPTHW/ExN.md
         - Ex10.9 ChatGpt:    LVASPTHW/ExN.md
-      - Chapter 11 Misc Information: 
-        - Ex11.1 数据库:       LVASPTHW/ExN.md
-        - Ex11.2 超算中心:     LVASPTHW/ExN.md
-        - Ex11.3 替代软件:     LVASPTHW/ExN.md
-        - Ex11.4 推荐书:       LVASPTHW/ExN.md
+      - Chapter 11 分享中心: 
+        - Ex11.1 常用数据库:         LVASPTHW/Ex11.1.md
+        - Ex11.2 热力学数据库:       LVASPTHW/Ex11.2.md
+        - Ex11.3 理论计算书籍与程序: LVASPTHW/Ex11.3.md
+        - Ex11.4 实用程序与脚本:     LVASPTHW/Ex11.4.md
+        - Ex11.5 推荐QQ群与博客:     LVASPTHW/Ex11.5.md
+        - Ex11.6 推荐超算中心:       LVASPTHW/Ex11.6.md
+        - Ex11.7 其他实用信息:       LVASPTHW/Ex11.7.md
       - Chapter 12 实用小脚本: 
         - Ex12.1 数据压缩:    LVASPTHW/Ex12.1.md
         - Ex12.2 Ubuntu字体安装:    LVASPTHW/Ex12.2.md
@@ -88,3 +91,4 @@ nav:
         - Ex12.4 Windows 检查电池健康: LVASPTHW/Ex12.4.md
         - Ex12.5 ASE切Cu(100)正交表面: LVASPTHW/Ex12.5.md
         - Ex12.6 能量、温度与化学: LVASPTHW/Ex12.6.md
+         
