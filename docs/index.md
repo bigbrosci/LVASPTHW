@@ -27,7 +27,5 @@ Password: bigbrosci
 (4) 严重警告：
 任何人发广告前都要咨询群主，获得允许后方可。
 
-(5) 旧版本下载
-
-[第二版](./Downloads/Second_edition.pdf) 
+(5) 旧版本下载: [第二版](./Downloads/Second_edition.pdf) 
 
