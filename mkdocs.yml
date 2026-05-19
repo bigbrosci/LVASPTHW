@@ -62,7 +62,7 @@ nav:
         - Ex7.1 slab模型:    LVASPTHW/ExN.md
         - Ex7.9 热力学:      LVASPTHW/ExN.md
       - Chapter 8 建模进阶:
-        - Ex8.1 建模软件:    LVASPTHW/ExN.md
+        - Ex8.1 建模软件:    LVASPTHW/Ex8.1.md
         - Ex8.2 建模思路:    LVASPTHW/ExN.md
       - Chapter 9 VASP的特殊版本以及后处理程序:
         - Ex9.1 VTST:       LVASPTHW/ExN.md
