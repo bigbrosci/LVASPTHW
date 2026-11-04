@@ -1,6 +1,6 @@
 
 
-### POTCAR 的生成以及脚本
+# POTCAR 的生成以及脚本
 
 
 
@@ -73,7 +73,7 @@ POTCAR  PSCTR
 
 `POSCAR` 文件包含了系统的晶格参数和原子信息。元素列表通常在文件的第 6 行，格式类似：
 
-```
+```bash
 (base) qli@bigbro:~/test/example$ head -n 7 POSCAR |cat -n
      1  Ru  S  H
      2     1.00000000000000
@@ -88,7 +88,7 @@ POTCAR  PSCTR
 
 下面是 Python 代码读取 `POSCAR` 中的元素列表：
 
-```
+```python
 def get_elements_from_poscar(poscar_file='POSCAR'):
     with open(poscar_file, 'r') as f:
         lines = f.readlines()
@@ -104,7 +104,7 @@ print("元素列表:", elements)
 
 下面是 **Bash** 读取 `POSCAR` 中的元素列表的操作（sed， head + tail）：
 
-```
+```bash
 (base) qli@bigbro:~/test/example$ sed -n 6p POSCAR
    Ru   S    H
 (base) qli@bigbro:~/test/example$ head -n 6 POSCAR |tail -n 1
@@ -119,7 +119,7 @@ print("元素列表:", elements)
 
 以下是一个简单的 Python 脚本，从 `POSCAR` 中获取元素列表，然后生成 `POTCAR`：
 
-```
+```python
 import os
 
 def get_elements_from_poscar(poscar_file='POSCAR'):
@@ -195,7 +195,7 @@ echo "POTCAR 文件生成成功: $OUTPUT"
 
 7 Python 和 bash 脚本 的使用。
 
-```
+```bash
 (base) qli@bigbro:~/test/example$ python3 potcar.py
 读取到的元素: ['Ru_pv', 'S', 'H']
 POTCAR 文件已生成: POTCAR

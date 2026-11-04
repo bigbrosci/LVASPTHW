@@ -63,7 +63,7 @@ qli@bigbrosci H2O_gas % grep reach OUTCAR
 * 如果发现A，判断任务收敛。
 * 前面两个都可以用一些关键词作为判据。如果发现某个唯一出现的关键词，说明任务结束后者收敛。比如下面我们运行一个命令，如果输出结果是`reached`，那么任务收敛了。使用一些常见的：`tail`,`cut`,`awk`命令来获取关键词作为判据。cut还得数空格数目，除非格式非常固定，这里建议用awk。
 
-```bash 
+```bash
 qli@bigbrosci H2O_gas % grep reached OUTCAR  |tail -n 1
  reached required accuracy - stopping structural energy minimisation
 qli@bigbrosci H2O_gas % grep reached OUTCAR | tail -n 1| awk '{print $1}'

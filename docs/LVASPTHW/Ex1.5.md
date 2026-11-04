@@ -1,4 +1,4 @@
-### Ex1.5 磨剑
+# Ex1.5 磨剑
 
 
 
@@ -38,19 +38,19 @@ sudo apt-get install sshfs
 
 Ubuntu是Subsystem，但是Ubuntu跟Windows的文件系统是连通的。怎么从Ubuntu进入到Windows的目录呢？ 前面我们安装Anaconda的时候提到了一下，这里再具体讲一下： 在Ubuntu的terminal中敲命令。把bigbro换成你自己的用户名。这样我们就可以进到Windows的Downloads文件。
 
-```bash 
+```bash
  cd /mnt/c/Users/bigbro/Downloads/
 ```
 
 同理，我们要进入到Windows的桌面：
 
-```bash 
+```bash
 cd /mnt/c/Users/bigbro/Desktop
 ```
 
 我们也可以建立一个超链接把Desktop放在Ubuntu的Home目录下：
 
-```bash 
+```bash
 ln -s /mnt/c/Users/bigbro/Desktop ~/Desktop
 ```
 
@@ -62,7 +62,7 @@ cd ~/Desktop
 
 此外，大师兄再介绍另外一个快捷的方式。
 
-```bash 
+```bash
 1. vi ~/.bashrc	
 2. export DES='/mnt/c/Users/bigbro/Desktop'
 3. cd $DES
@@ -80,7 +80,7 @@ cd ~/Desktop
 
 
 
-```bash 
+```bash
 1. mkdir ~/ssd ~/sse ~/ssf 
 2. vi ~/.bashrc
 3. alias  ssd='sudo mount -t drvfs D: ssd'
@@ -106,7 +106,7 @@ cd ~/Desktop
 
 对于快捷方式，2.2也已经讲过了，学会合理使用`.bashrc`这个文件。但是提前打好预防针：修改前一定要先备份当前的版本（第一行命令），万一写错了还能还原（第二行命令）。
 
-```bash 
+```bash
 1. cp ~/.bashrc  bashrc_2024_12_10
 2. cp bashrc_2024_12_10 ~/.bashrc
 ```
@@ -134,7 +134,7 @@ alias des='cd /mnt/c/Users/lqlhz/Desktop'
 
 废话不多说了，直接上命令：
 
-```bash 
+```bash
 conda create -n ase 
 conda install conda-forge::ase
 conda install anaconda::seaborn

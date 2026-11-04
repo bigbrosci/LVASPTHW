@@ -6,7 +6,7 @@
 
 前面我们学习到，KPOINTS文件只有简单的几行，如下：
 
-```
+```text
 K-POINTS  
 0  
 Gamma

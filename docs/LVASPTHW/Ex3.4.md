@@ -18,7 +18,7 @@ https://www.vasp.at/wiki/index.php/OUTCAR
 
 1) 大家下载这个例子，解压文件。
 
-```bash 
+```bash
 tar -zxvf O.tar.gz 
 ```
 
@@ -37,7 +37,7 @@ vim显示行数小窍门：在 Vim 命令模式下（按 Esc 回到命令模式�
 26-45: 警告信息：每次运行的时候（即使你的输入是正确的），VASP都会输出一个大大的WARNING来吓唬你，大家可以忽略它。但如果你的计算失败了，这个警告信息对你排查错误可能会有所帮助。
 
 47-116: POTCAR基本信息，如果你想通过OUTCAR查看POTCAR中的元素时，可以使用下面的命令：
-```
+```bash
 grep POTCAR OUTCAR
 grep TIT OUTCAR
 grep ENMAX OUTCAR

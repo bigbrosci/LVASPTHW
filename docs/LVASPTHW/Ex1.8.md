@@ -1,4 +1,4 @@
-### Ex2.8 基本的Linux命令
+# Ex2.8 基本的Linux命令
 
 
 VASP任务是在服务器里面提交并运行的。与服务器（Linux系统）的交互主要是通过Terminal （终端）来实现。
@@ -93,7 +93,7 @@ qli@bigbrosci Ex01 % less INCAR
 
 `mkdir` 是创建文件夹的命令，后面跟着你要创建的文件夹的名字。（`mkdir` 和文件夹名字中间有空格）`mkdir`的使用有很多窍门。大家可以google或者百度关键词查找： mkdir 窍门，小诀窍 等等。下面我们创建一个名为Ex02的文件夹，创建Ex03并同时在该文件夹中创建另一个文件夹`bigbro`。  (`mkdir -p`)
 
-```
+```bash
 qli@bigbrosci ~ % cd Desktop/LVASPTHW 
 qli@bigbrosci LVASPTHW % ls
 Ex01/
@@ -123,7 +123,7 @@ Ex01/
 
 2.1） 将文件夹bigbro 复制为: bigbra
 
-```
+```bash
 qli@bigbrosci LVASPTHW % ls
 Ex01/
 qli@bigbrosci LVASPTHW % mkdir bigbro 
@@ -150,7 +150,7 @@ alias cp='cp -r'
 
 2.2） 将文件夹bigbro 重命名为：bigbro_1
 
-```
+```bash
 qli@bigbrosci LVASPTHW % mv bigbro bigbro_1
 qli@bigbrosci LVASPTHW % ls
 Ex01/     bigbra/   bigbro_1/
@@ -158,7 +158,7 @@ Ex01/     bigbra/   bigbro_1/
 
 2.3） 将文件夹bigbro_1移动到：bigbra
 
-```
+```bash
 qli@bigbrosci LVASPTHW % mv bigbro_1 bigbra 
 qli@bigbrosci LVASPTHW % ls
 Ex01/     bigbra/
@@ -172,7 +172,7 @@ bigbro_1/
 
 2.4）将Ex01中的内容复制到当前目录。`当前目录`在linux命令中，用`.`表示。
 
-```
+```bash
 qli@bigbrosci LVASPTHW LVASPTHW % ls
 Ex01/   bigbra/
 qli@bigbrosci LVASPTHW LVASPTHW % ls Ex01      
@@ -185,7 +185,7 @@ qli@bigbrosci LVASPTHW LVASPTHW %
 
 2.5） 将Ex01中的四个输入文件复制到bigbra这个文件夹中：
 
-```
+```bash
 qli@bigbrosci LVASPTHW LVASPTHW % cp Ex01/* bigbra 
 qli@bigbrosci LVASPTHW LVASPTHW % ls * 
 Ex01:
@@ -243,4 +243,3 @@ ii） 如果不知道最简单的方法， 那么可以尝试其他方式来解�
 
 
 通过本小节的学习：一方面我们熟悉文件（夹）创建，复制，移动，以及重命名的linux命令：mkdir， mv， cp，以及一些特殊的字符比如`*`和 `.`。此外， linux的命令操作有很多的小技巧，大家**一定一定一定**要多多去网上搜集，加以练习，这对于提高工作效率非常有帮助。 熟悉使用这几个命令，能跟Windows的鼠标操作对应起来，本节任务就完成了。当然喽，跟拍照一样，现在越来越多的公司把计算做的越来越傻瓜化，鼠标点点就完事。如果你想要这样的教程，本书后面的内容也可以不看了。
-

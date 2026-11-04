@@ -1,4 +1,4 @@
-### Ex2.4 POSCAR的准备
+# Ex2.4 POSCAR的准备
 
 #### 简单说明
 POSCAR 包含计算模型的结构信息，也就是你要研究的对象。POSCAR有自己固定的格式，每一行都有特定的含义，认真掌握这些，对于搭建模型非常有帮助。对于本节的例子：O原子的计算，我们要把O原子放到一个格子里面，格子大小为：8 $\times$ 8 $\times$ 8 $\AA{^3}$。那么POSCAR至少包括：
@@ -12,7 +12,7 @@ POSCAR 包含计算模型的结构信息，也就是你要研究的对象。POSC
 
 #### POSCAR的输入
 
-```
+```text
 O atom in a box 
 1.0             # universal scaling parameters 
 8.0 0.0 0.0     # lattice vector a(1) 

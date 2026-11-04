@@ -36,7 +36,7 @@
 
 注意的是：图中展示的是体系总的DOS信息，而且列的数目跟自旋，原子的轨道（s,p,d,f）相关，具体的情况要看INCAR的设置，下面是本节例子（去上一节下载）中体系总的DOS以及O原子的DOS信息
 
-```
+```text
 7-307行: energy     DOS     integrated DOS
 309-end行: energy s-DOS(up) s-DOS(down) p-DOS(up) p-DOS(dwn) d-DOS(up) d-DOS(dwn)
 ```

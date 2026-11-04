@@ -1,4 +1,4 @@
-### Ex1.8 VASP的编译
+# Ex1.8 VASP的编译
 
 
 VASP的编译，对于初入门的新手来说，有些难度，但是这也是学习VSASP最关键的一个准备，毕竟没有安装VASP，没有办法进行实际操作。下面是针对新手菜鸟的一个建议：
@@ -20,7 +20,7 @@ VASP的编译，对于初入门的新手来说，有些难度，但是这也是�
    
  *  也可以通过命令下载以及安装，具体参考下载网页中`Command-Line Installation Instructions`的描述。 
 
-```shell
+```bash
 qli@bigbro$ ls
 l_BaseKit_p_20XXX_offline.sh  l_HPCKit_p_XXX_offline.sh
 qli@bigbro$ sh l_BaseKit_p_20XXX_offline.sh  
@@ -38,7 +38,7 @@ qli@bigbro$ sh l_HPCKit_p_XXX_offline.sh
 
 设置 `Intel OneAPI` 环境变量需要用到 `/home/xxx/intel/oneapi/setvars.sh` 文件。大家把 `source /home/xxx/intel/oneapi/setvars.sh` 添加到 `~/.bashrc` 文件中即可。xxx 为`username`。比如用户名为`bigbro`:
 
-```shell
+```bash
 echo 'source /home/bigbro/intel/oneapi/setvars.sh' >> ~/.bashrc
 ```
 
@@ -50,7 +50,7 @@ echo 'source /home/bigbro/intel/oneapi/setvars.sh' >> ~/.bashrc
 
 需要注意的是：OneAPI 2024.0 以及之后的版本中，`ICC` 已经被替换成了`ICX` : **Intel® C++ Compiler Classic (icc) is deprecated and was discontinued in the oneAPI 2024.0 release.** 相应的，我们在编译前，要将makefile.include 中的`icc`和`icpc` 需要换成 `icx` 和 `icpx` （在第六行的操作中将第1，2行更新到makefile.include文件）; 然后静待安装成功即可。
 
-```shell
+```bash
 1 CC_LIB      = icx
 2 CXX_PARS    = icpx
 3 tar zvxf vasp.5.4.4.tar.gz

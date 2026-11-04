@@ -76,7 +76,7 @@ cp CONTCAR POSCAR
 
 下面是大师兄本人在续算的时候所用到的一个保存前面计算的小脚本：
 
-```shell
+```bash
 #!/usr/bin/env bash
 
 mv POSCAR POSCAR-$1
@@ -104,7 +104,7 @@ II）如果前面检查的结构没问题，这种情况，可能是因为
 
 那么我们就需要继续算了。此时，为了保证计算的可重复性，我们必须要将上一步的计算保存记录下来。比如下面，大师兄本人的一个过渡态的优化：
 
-```
+```bash
 qli@bigbrosci:~/test$ ls
 CONTCAR    DOSCAR    EIGENVAL  INCAR    OSZICAR    OSZICAR-2  OUTCAR    OUTCAR-2  PCDAT   POSCAR-1  POSCAR-3  REPORT  sub16  vasprun.xml
 CONTCAR-1  DOSCAR-1  IBZKPT    KPOINTS  OSZICAR-1  OSZICAR-3  OUTCAR-1  OUTCAR-3  POSCAR  POSCAR-2  POTCAR    sub12   sub28

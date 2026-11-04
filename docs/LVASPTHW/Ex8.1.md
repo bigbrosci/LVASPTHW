@@ -16,13 +16,13 @@ https://github.com/bigbrosci/p4vasp.git  （记得切换到p4vasp-py3这个分�
 
 1.1 下载p4vasp-py3。
 
-```
+```bash
 mkdir ~/opt && cd ~/opt && git clone -b p4vasp-py3  https://github.com/bigbrosci/p4vasp.git
 ```
 
 1.2 编译p4vasp-py3
 
-```
+```bash
 cd p4vasp/ && bash ubuntu-start.sh
 ```
 
@@ -30,7 +30,7 @@ cd p4vasp/ && bash ubuntu-start.sh
 
 1.3 编辑~/.bashrc 文件，将下面这一行添加到文件中。
 
-```
+```bash
 alias p4v="$HOME/opt/p4vasp/run-p4vasp.sh"
 ```
 
@@ -42,31 +42,31 @@ alias p4v="$HOME/opt/p4vasp/run-p4vasp.sh"
 
 2.1 下载：
 
-```
+```bash
 mkdir ~/opt && cd ~/opt && git clone -b p4vasp-py3   https://github.com/bigbrosci/p4vasp.git
 ```
 
 2.2 编译，类似Ubuntu，运行的脚本变成了macos-start.sh
 
-```
+```bash
 cd p4vasp/ && bash macos-start.sh
 ```
 
 2.3 修改~/.zshrc 
 
-```
+```bash
 alias p4v="$HOME/opt/p4vasp/run-p4vasp.sh"
 ```
 
 2.4 在terminal中运行的时候直接敲命令即可。
 
-```
+```bash
 p4v POSCAR 
 ```
 
 3 安装实例：
 
-```
+```bash
 qli@qli:~$ mkdir ~/opt && cd ~/opt && git clone -b p4vasp-py3   https://github.com/bigbrosci/p4vasp.git
 Cloning into 'p4vasp'...
 remote: Enumerating objects: 1998, done.

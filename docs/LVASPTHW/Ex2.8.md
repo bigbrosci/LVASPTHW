@@ -67,7 +67,7 @@ ssh qli@cluster.hpc.udel.edu -X
 
 则通过使用`sshfs`将服务器挂载到本地电脑，从而在`Terminal`中实现数据传输的命令行操作。`sshfs`的下载则通过命令行进行：
 
-```
+```bash
 sudo apt-get update
 sudo apt-get install sshfs
 ```

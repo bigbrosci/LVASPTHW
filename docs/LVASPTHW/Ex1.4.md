@@ -1,4 +1,4 @@
-### Ex1.4 WSL-Ubuntu-Anaconda
+# Ex1.4 WSL-Ubuntu-Anaconda
 
 
 本节介绍如何在Windows中通过WSL（Windows Subsystem for Linux）使用Ubuntu18, 并安装p4vasp, Anaconda，以及通过Anaconda进一步安装其他Python软件。 这也是大师兄本人目前最常用的一个工作方式。不一定要求大家一定都跟我一样，但是我知道肯定有跟同样喜欢这个工作方式的人。另外，很多的步骤与Ubuntu以及Mac系统中都很相似。下面我们一步一步实现这个基本的工作配置。
@@ -100,7 +100,7 @@ sudo apt install firefox
  * 1.2 打开Ubuntu的Terminal，将安装包复制到Ubuntu的目录下，并运行：
 
 
-```python
+```bash
 qli@bigbro:~$ cp /mnt/c/Users/bigbro/Downloads/Anaconda3-2024.10-1-Linux-x86_64.sh .
 qli@bigbro:~$ bash Anaconda3-2024.10-1-Linux-x86_64.sh  
 ```

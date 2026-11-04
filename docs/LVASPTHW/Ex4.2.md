@@ -6,7 +6,7 @@
 
 前面我们提到，可以使用vim打开INCAR然后修改SIGMA的参数。除了vim当然还有文本编辑器等其他的工具。但这些工具都有个缺点，就是得把文件打开后才能修改。下面我们使用sed命令，不打开文本，直接对里面的内容进行替换操作。
 
-```
+```bash
 qli@bigbrosci Ex02 % cd 0.01
 qli@bigbrosci 0.01 % sed '3s/0.01/0.02/g' INCAR 
 SYSTEM = O atom 
@@ -33,7 +33,7 @@ SIGMA = 0.01
 
 从上面实例中最后的`cat INCAR`命令结果不难发现，实际上我们并没有将INCAR文件中的0.01替换成0.02。也就是说这个命令只是输出了替换后的结果，但没有更新INCAR文件。那怎么样才可以更新INCAR文件呢？ 我们可以这样做：
 
-```
+```bash
 qli@bigbrosci 0.01 % sed '3s/0.01/0.02/g' INCAR > INCAR_new
 qli@bigbrosci 0.01 % cat INCAR_new 
 SYSTEM = O atom 
@@ -50,7 +50,7 @@ SIGMA = 0.02
 
 前面例子的INCAR中SIGMA的值已经不是0.01了，我们先从ex02/0.01中复制一个过来。
 
-```
+```bash
 qli@bigbrosci 0.01 % cp ../0.02/INCAR  .
 qli@bigbrosci 0.01 % cat INCAR  -n 
      1	SYSTEM = O atom 
@@ -69,7 +69,7 @@ qli@bigbrosci 0.01 % cat INCAR  -n
 
 * 最保险的做法就是运行前，先对操作的对象进行备份
 
-```
+```bash
 qli@bigbrosci 0.01 % cp INCAR  INCAR_back
 qli@bigbrosci 0.01 % sed -i '3s/0.01/0.02/g' INCAR 
 qli@bigbrosci 0.01 % ls
@@ -78,7 +78,7 @@ INCAR  INCAR_back  KPOINTS  POSCAR  POTCAR
 
 * 其次是，先`不加 -i` 运行下sed命令，确保输出的是正确结果后，然后再加上 `-i` 运行.
 
-```
+```bash
 qli@bigbrosci 0.01 % cp INCAR_back  INCAR 
 qli@bigbrosci 0.01 % sed '3s/0.01/0.02/g' INCAR
 SYSTEM = O atom 
@@ -97,7 +97,7 @@ qli@bigbrosci 0.01 % cat INCAR  -n
 
 1. 下面演示批量将0.01到0.09中所有INCAR中的0.01替换成0.05。既然我们知道了sed可以对单个文件进行操作，那么我们也可以结合for循环，来实现一个批量操作的目的。到现在为止，相信大家都可以看懂下面的命令操作。就不再啰嗦解释了。有一点需要注意的是grep 命令中的星号`*`，检查输入输出的时候用`*`非常方便。
 
-```
+```bash
 qli@bigbrosci 0.01 % grep SIGMA */INCAR
 0.01/INCAR:SIGMA = 0.01
 0.02/INCAR:SIGMA = 0.01
@@ -130,7 +130,7 @@ qli@bigbrosci 0.01 % grep SIGMA */INCAR
 
 2. 下面通过for + sed 将所有INCAR中的0.01替换为文件夹对应的数值。来实现我们之前的目标：每个文件夹中的SIGMA值与文件夹相同。命令如下：
 
-```
+```bash
 qli@bigbrosci 0.01 % ls
 0.01  0.02  0.03  0.04  0.05  0.06  0.07  0.08  0.09  0.10
 qli@bigbrosci 0.01 % for i in *; do sed -i "3s/0.01/$i/g" $i/INCAR ; done  
@@ -165,7 +165,7 @@ bigbro
 * for i in *;  这里的 * 指的是当前目录下所有的文件以及文件夹，本例中没有文件，只有从0.01， 0.02， 0.03 到 0.10 的文件夹；所以： for i in  *  =   for i in 0.01 0.02 0.03  0.04  0.05 0.06  0.07  0.08 0.09 0.10
 *  使用sed 命令将INCAR中的 0.01 (所有文件夹中的都是0.01)替换成文件夹的数字;  
 
-```
+```bash
 sed -i "3s/0.01/$i/g" $i/INCAR 
 ```
 
@@ -181,7 +181,7 @@ sed -i "3s/0.01/$i/g" $i/INCAR
 
 下面是for 循环结合`cp`,`sed`实现批量复制，并修改INCAR的例子。
 
-```
+```bash
 qli@bigbrosci Ex02 % cat 01/INCAR  -n 
      1	SYSTEM = O atom 
      2	ISMEAR = 0       

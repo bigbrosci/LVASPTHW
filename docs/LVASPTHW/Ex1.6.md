@@ -1,4 +1,4 @@
-### Ex1.6 vscode实现在windows系统中无缝连接WSL
+# Ex1.6 vscode实现在windows系统中无缝连接WSL
 
 
 

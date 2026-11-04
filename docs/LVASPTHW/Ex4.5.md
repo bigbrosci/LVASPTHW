@@ -46,7 +46,7 @@ cat SUMMARY.dia
 
 从任务可以看出，我们是在准备测试SIGMA取值对计算影响的输入文件。为实现这个小目标，我们可以这样做：将0.01复制成0.02,0.03...0.10，然后挨个修改里面的INCAR文件。如下：
 
-```
+```bash
 cp 0.01 0.02
 cp 0.01 0.03
 ......
@@ -103,7 +103,7 @@ INCAR  KPOINTS  POSCAR  POTCAR
 
 2）大家还可以练习下面这几个命令来看一下效果:  `echo`是打印输出的命令。
 
-```
+```bash
 echo {1..100} 
 echo {A..Z}
 echo {a..z}
@@ -132,7 +132,7 @@ echo {a..z}{1..10}{A..Z}
 
 9）大家可以尝试着其他类似的命令： `for i in XXX; do XXX ; done`  比如: 
 
-```
+```bash
 for bigbro in {A..Z}; do echo bigbro is $bigbro ; done
 ```
 

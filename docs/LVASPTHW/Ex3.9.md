@@ -1,4 +1,4 @@
-## Ex3.9 VASP 的输出文件：vasprun.xml 
+# Ex3.9 VASP 的输出文件：vasprun.xml 
 
 
 
@@ -67,13 +67,12 @@
 
 本人平时很少使用这个文件，因为基本的一些信息都是通过CONTCAR, OSZICAR, OUTCAR，和 DOSCAR来获取的。 但是，这也衍生出了vasprun.xml非常重要的作用，那就计算过程以及结果的备份。由于大量的操作集中到OUTCAR或者CONTCAR上面，难免会误删或者覆盖，导致结果丢失，此时可以用vasprun.xml来补救了。比如可以通过下面的命令，使用ASE 获得最后一个离子步的结构。
 
-```
+```bash
 ase gui vasprun.xml@-1 -o POSCAR 
 ```
 
 另外一点需要注意的是，如果记录的信息太多，会导致这个文件很大，可以通过下面的命令压缩一下，需要的时候解压即可。
 
-```
+```bash
 tar -zcvx vasprun.xml.tar.gz vasprun.xml && rm vasprun.xml
 ```
-

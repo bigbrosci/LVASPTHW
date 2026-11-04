@@ -23,7 +23,7 @@
 
 ### 3. 文件结构
 
-```
+```text
 # of k-points:    Nk    # of bands:   Nb    # of ions:   Ni
 
 k-point     ik :   kx ky kz   weight = w
@@ -70,4 +70,3 @@ tot     ...   ...   ...   ...   ...   ...   ...   ...    ...    ...
 | 文件结构 | 每个 k 点、能带、离子均有对应投影值 |
 | 投影意义 | 仅包含 RWIGS 球体内的成分，真实物理解释需结合态密度 DOS |
 | 应用场景 | 胖带图、轨道成分、可视化工具（如 PyProcar, rsgrad,  vaspkit等） |
-

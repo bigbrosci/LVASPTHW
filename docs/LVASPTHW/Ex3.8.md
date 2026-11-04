@@ -93,4 +93,3 @@ LWAVE = .FALSE.
 | [Wannier90 (via VASP2WANNIER90)](http://www.wannier.org/)    | 构建 Wannier 函数      | 局域轨道、电子传输、Berry 相关物理 | 虽非直接用 WAVECAR，而是间接配合 WAVECAR 与 PROJCAR 提取波函数信息以拟合 MLWF |
 
 > 注：有些工具可能还需配合 CHGCAR / KPOINTS / PROCAR 等文件共同使用。
-

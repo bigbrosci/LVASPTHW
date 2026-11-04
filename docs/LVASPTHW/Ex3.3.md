@@ -28,7 +28,7 @@ OSZICAR 文件是输出文件之一，记录了电子自洽迭代过程（SCF，
 
 当VASP迭代求解`O`原子电子结构的时候，整个过程就会记录在OSZICAR中。下面我们就看一下VASP官网对`OSZICAR`的解释说明：https://www.vasp.at/wiki/index.php/OSZICAR
 
-```
+```text
 Information about convergence speed and about the current step is written to stdout and to the **OSZICAR** file. Always keep a copy of the **OSZICAR** file, it might give important information.
 ```
 
