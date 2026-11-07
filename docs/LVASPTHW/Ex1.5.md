@@ -18,7 +18,7 @@ WSL 可以跟Windows的VS-Code无缝衔接。使用Python写代码，脚本的�
 
 ```bash
 sudo apt-get  update 
-sudo apt-get  p4vasp
+# p4vasp 的安装见第 5 章 Ex5.2，不要用 apt 装老版本
 sudo apt-get install libxcb-* 
 sudo apt-get install vim
 sudo apt-get install tree

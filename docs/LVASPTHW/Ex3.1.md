@@ -16,7 +16,7 @@
 
 7）学会使用Chatgpt或者Deepseek等AI tools，让它们帮我们写一些调用ASE和Pymatgen的小脚本去分析这些输出结果，会让你的工作效率极大地提升，但是你需要去浏览ASE 和 Pymatgen 的官网，知道这两个软件都是干嘛用的。
 
-8）可视化的软件也有很多：ASE的GUI, VESTA, Material Studio, Gaussian View等。大师兄最推荐的是p4vasp，ASE，和 VESTA。 p4vasp需要参考: Ex1.1 学习VASP的硬件和软件要求。需要注意的是p4vasp没人更新了，这一条里面提到的，我感觉都必要都学会一些。
+8）可视化的软件也有很多：ASE的GUI, VESTA, Material Studio, Gaussian View等。大师兄最推荐的是p4vasp，ASE，和 VESTA。p4vasp 详见第 5 章，现在有 p4vasp-py3 新版在维护，安装办法见 Ex5.2。这一条里面提到的，我感觉都必要都学会一些。
 
 9) 其他的读取输出文件，去实现某一个功能的，可以去Github上搜搜，比如：cgrad. https://github.com/Ionizing/usefultools-for-vasp
 

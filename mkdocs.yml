@@ -49,12 +49,10 @@ nav:
         - Ex4.4 for + sed + POSCAR:   LVASPTHW/Ex4.4.md
         - Ex4.5 VASP任务的批量提交-1: LVASPTHW/Ex4.5.md
         - Ex4.6 VASP任务的批量提交-2: LVASPTHW/Ex4.6.md
-      - Chapter 5 气相体系的计算:
-        - Ex5.1 单原子:    LVASPTHW/ExN.md
-        - Ex5.2 双原子:    LVASPTHW/ExN.md
-        - Ex5.3 三原子:    LVASPTHW/ExN.md
-        - Ex5.4 多原子:    LVASPTHW/ExN.md
-        - Ex5.5 热力学:    LVASPTHW/ExN.md
+      - Chapter 5 p4vasp:
+        - Ex5.1 p4vasp 简介:    LVASPTHW/Ex5.1.md
+        - Ex5.2 最新版 p4vasp 的获取方式:    LVASPTHW/Ex5.2.md
+        - Ex5.3 最新更新内容:    LVASPTHW/Ex5.3.md
       - Chapter 6 体相体系的计算:
         - Ex6.1 Bulk的搭建:    LVASPTHW/ExN.md
         - Ex6.2 Bulk的优化:    LVASPTHW/ExN.md
@@ -62,9 +60,6 @@ nav:
       - Chapter 7 表面体系的计算:
         - Ex7.1 slab模型:    LVASPTHW/ExN.md
         - Ex7.9 热力学:      LVASPTHW/ExN.md
-      - Chapter 8 建模进阶:
-        - Ex8.1 建模软件:    LVASPTHW/Ex8.1.md
-        - Ex8.2 建模思路:    LVASPTHW/ExN.md
       - Chapter 9 VASP的特殊版本以及后处理程序:
         - Ex9.1 VTST:       LVASPTHW/ExN.md
         - Ex9.2 VASPsol++:  LVASPTHW/ExN.md

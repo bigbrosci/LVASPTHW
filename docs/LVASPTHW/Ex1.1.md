@@ -72,7 +72,7 @@ Linux下面基本都会自带，不论你用什么操作系统，**必须要学�
 
 * 3）[**p4vasp**](http://www.p4vasp.at)
 
-  [http://www.p4vasp.at/](http://www.p4vasp.at/)  主要有建模，可视化以及后处理的一些功能。这是大师兄本人最喜欢的建模软件。虽然已经没有更新维护，但是依然非常好用。Windows版本，很久没有更新了，点击此处下载，解压,双击图标即可运行。也可以在大师兄QQ群或者其他QQ群文件中下载。 Linux版本功能更加强大，但是由于很久没更新了（Python2），依赖的库也早已经被时代所淘汰，因此新的电脑中很难安装(**Ubuntu 20**以及后续的系统） Ubuntu（18以及更老的版本）用户使用命令一键安装：`sudo apt-get install p4vasp`  p4vasp很多功能可以用其他的软件替代，比如下面的[ASE](https://wiki.fysik.dtu.dk/ase/index.html)。
+  [http://www.p4vasp.at/](http://www.p4vasp.at/)  主要有建模，可视化以及后处理的一些功能。这是大师兄本人最喜欢的建模软件。老版本是 Python2 的，已经没人维护了，新电脑上很难装；现在有了升级到 Python3 的新版本 p4vasp-py3，详见第 5 章，安装办法见 Ex5.2，不要再用 `sudo apt-get install p4vasp` 去装老版本。p4vasp很多功能可以用其他的软件替代，比如下面的[ASE](https://wiki.fysik.dtu.dk/ase/index.html)。
 
 * 4） **[ASE](https://wiki.fysik.dtu.dk/ase/index.html)**
 

@@ -50,7 +50,7 @@ wsl --install
 
 #### 2 安装Ubuntu 18.0 
 
-Windows 目前支持很多Ubuntu的发行版本，我们这里只安装 Ubuntu 18。原因只有一个：在U18上可以简单安装并使用p4vasp. 如果你不想使用这个软件，可以安装最新的Ubuntu 24. 
+Windows 目前支持很多Ubuntu的发行版本，我们这里只安装 Ubuntu 18。原因只有一个：这套教程是按 U18 写的。如果你不想用 U18，可以安装最新的Ubuntu 24，p4vasp 现在有 p4vasp-py3 新版，安装办法见第 5 章 Ex5.2，不用非得留在 U18 上。
 
 1. **通过 Microsoft Store 安装 Ubuntu**
 
@@ -76,14 +76,9 @@ Windows 目前支持很多Ubuntu的发行版本，我们这里只安装 Ubuntu 1
 
 #### 3. 安装p4vasp  
 
-安装完成Ubuntu 18后，在屏幕底部的搜索框输入 Ubuntu， 点击Ubuntu 18。就直接弹出Terminal 了。按照下面的命令依次输入：
+p4vasp 现在有了升级到 Python3 的新版本 p4vasp-py3，安装办法见第 5 章 Ex5.2，不要再用 `sudo apt-get install p4vasp` 去装老版本，那个是 Python2 的老版本，新系统上很难装。
 
-```bash
-1. sudo apt-get update
-2. sudo apt-get install p4vasp  
-```
-
-这是迄今为止p4vasp最简单的安装办法了。其他的Ubuntu版本应该也可以安装，但是可能会有些麻烦，留给愿意折腾的人去解决吧。 如果你想安装其他的软件，可以使用跟p4vasp类似的方式，比如VIM, Tree, firefox浏览器等:
+如果你想安装其他的软件，可以用类似的方式，比如VIM, Tree, firefox浏览器等:
 
 ```bash
 sudo apt-get install vim
@@ -142,7 +137,7 @@ qli@bigbro:~/Downloads$ bash Anaconda3-2024.10-1-Linux-x86_64.sh
 (ase) qli@qli:~$ conda install conda-forge::ase
 ```
 
-最后一步的命令其实就类似Ubuntu中的 `sudo apt-get install p4vasp` 等后面需要安装一些Python相关的软件时，就可以直接用`conda install XXX` 这个命令来实现了。比如我们想要安装`pandas`这个软件，在Anaconda官网的库中（[Anaconda.org](https://anaconda.org/)）搜索pandas。 找到后点击，就可以进入[Pandas | Anaconda.org](https://anaconda.org/anaconda/pandas)并找到对应的下载命令。
+最后一步的命令其实就类似Ubuntu中的 `sudo apt-get install vim`，等后面需要安装一些Python相关的软件时，就可以直接用`conda install XXX` 这个命令来实现了。比如我们想要安装`pandas`这个软件，在Anaconda官网的库中（[Anaconda.org](https://anaconda.org/)）搜索pandas。 找到后点击，就可以进入[Pandas | Anaconda.org](https://anaconda.org/anaconda/pandas)并找到对应的下载命令。
 
 
 #### Ex1.4 小结：
@@ -152,7 +147,7 @@ qli@bigbro:~/Downloads$ bash Anaconda3-2024.10-1-Linux-x86_64.sh
 * WSL是什么？ 怎么安装？
 * Ubuntu有哪些版本？我们为什么要安装 Ubuntu 18？
 * Windows中的Terminal怎么安装，如何个性化设置？
-* Ubuntu中怎么安装p4vasp以及其他软件？
+* Ubuntu中怎么安装其他软件？p4vasp 的安装办法见第 5 章 Ex5.2。
 * Ubuntu中怎么安装Anaconda？
 * 通过Anaconda安装ASE以及其他Python软件/库。
 
