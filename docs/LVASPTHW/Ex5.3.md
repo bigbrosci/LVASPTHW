@@ -2,6 +2,20 @@
 
 本节主要记录 p4vasp 的更新历史。
 
+## 2026-11-07 更新内容：
+
+1） `p4v test.xyz` 等命令和 File/Open 现在能通过 ASE 导入非 VASP 结构（xyz、cif、pdb 等），无晶胞时两侧各加 10 Å。
+
+2） 新增 Vibrations 振动分析：左侧按钮和 Analysis 菜单，可看频率、播模式动画、沿虚频位移导出 POSCAR，还能算热力学矫正（F/G）。
+
+3） 修复了频率文件窗口（Open frequency OUTCAR 等）按钮看不见的问题，改用紧凑对话框，底部保留 Open/Save/Cancel。
+
+4） 新增 Help → Acknowledgment 致谢表，含日期列，按日期升序排列。
+
+5） 安装器改进：结束提示改英文，自动配置 p4v 别名，支持 `source install.sh` 装完自动加载，末尾附常用命令示例。
+
+注：本次未生成新 Windows 包，11 月 6 日的 EXE 不含上述新功能。
+
 ## 2026-10-07 更新内容：
 
 1） 修复了 Mac 上通过 `p4v` 命令打开软件时界面藏在其他页面后面的问题。
