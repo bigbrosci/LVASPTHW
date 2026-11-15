@@ -2,6 +2,32 @@
 
 本节主要记录 p4vasp 的更新历史。
 
+## 2026-11-14 更新内容：
+
+1） 做了 Python2 旧代码和依赖全盘审计（只出文档不删代码），新增依赖清单和版本快照工具。
+
+2） 打了可运行基线检查点（标签 checkpoint/2026-11-14-before-legacy-interface-fixes），开始分批修旧接口：线程状态、VAC 计时、FFT/滤波、绘图值比较、PS/EPS/PDF、FIG/SVG 导出。
+
+3） Resources 与旧 SQL 解耦（延迟加载），历史构建入口加保护，删了退役的三个旧 Makefile 和 44 个旧 Glade 1 资源文件。
+
+4） Models 标签改按需加载，构造时间约少 61%。
+
+5） 新增 Edit → Copy for ChatGPT…，可复制结构摘要（默认不含坐标），完整 POSCAR/INCAR 可选。
+
+6） 打包了新的 Windows 便携版（2026-11-14，源 58e353dc），含 EXE、ZIP 及校验文件。
+
+## 2026-11-13 更新内容：
+
+1） XDATCAR 现在能在 Control 里按完整轨迹播放（以前只读单个结构），支持 Direct/Cartesian、VASP4/5 文件头及变胞，坏帧明确拒绝。
+
+2） Linux 实测通过 71 原子、1000 帧的用户 XDATCAR。
+
+## 2026-11-12 更新内容：
+
+1） 整理了 10 月 29 日至 11 月 12 日的半月更新总结（28 项），保存到 Windows 桌面，不纳入 Git。
+
+2） 打包了新的 Windows 便携版（2026-11-12，源 4add6800），含 EXE、ZIP 及校验文件。
+
 ## 2026-11-11 更新内容：
 
 1） 修复了 macOS 上 Database → Resources 点击崩溃的问题，重启即可生效。
